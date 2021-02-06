@@ -66,7 +66,7 @@ function OpenGame.openGame()
     
     for key, val in pairs(process) do
         Debug.Log(key)
-        OpenTimes = 0
+        local OpenTimes = 0
         ::s1::
         OpenTimes = OpenTimes + 1
         mSleep(3000)
