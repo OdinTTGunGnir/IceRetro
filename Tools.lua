@@ -2,7 +2,7 @@ Tools = {}
 
 -- 点击
 function Tools.click(x , y , times , interval)
-    
+    mSleep(500)
     local i = 0
     if interval == nil then
         interval = 100
@@ -17,7 +17,7 @@ function Tools.click(x , y , times , interval)
         mSleep(interval)
         touchUp(x - 5,y - 5)
     end
-    
+    mSleep(1000)
 end
 
 
