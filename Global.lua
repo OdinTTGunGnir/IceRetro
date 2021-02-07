@@ -30,11 +30,11 @@ function Global.Begin()
     until( Finish )
     Debug.Log("游戏配置成功")
     
-    -- 移动
+    -- 移动至
     repeat
         Finish = Global.MoveTo.moveTo()
     until( Finish )
-    Debug.Log("移动成功")
+    Debug.Log("移动成功，移动至：")
     
 end
 
