@@ -19,7 +19,7 @@ function Global.Begin()
     
     -- 进入游戏游戏
     repeat
-        Finish = Global.OpenGame.openGame()
+        Finish = Global.OpenGame.openGame("hsz")--传递手机型号
     until( Finish )
     Debug.Log("进入游戏成功")
     
