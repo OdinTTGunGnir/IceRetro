@@ -7,7 +7,7 @@ Global.GameConfig = require("GameConfig")
 Global.MoveTo = require("MoveTo")
 
 UI = require("UI")
-MapSelect = require("MapSelect")
+SearchColorHSZ = require("SearchColorHSZ")
 
 
 local Finish = false

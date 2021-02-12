@@ -2,6 +2,7 @@ MapSelect = {}
 Tools = require("Tools")
 Debug = require("Debug")
 Fight = require("Fight")
+SearchColorHSZ = require("SearchColorHSZ")
 function ClickMap()
     Tools.click(1160,80)
 end
