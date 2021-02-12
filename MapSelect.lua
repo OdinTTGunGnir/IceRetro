@@ -111,14 +111,6 @@ function MapSelect.GoToMap(name)
         --前往孤独之地
         MapSelect.GpToGudu(4)
     end
-    
-    
-    --打开自动
-        Tools.click(1160,314) 
-    --循环清理背包
-    while (true) do
-        Fight.CheckBag()
-    end
 end
 
 return MapSelect

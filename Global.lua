@@ -57,6 +57,14 @@ function Global.Begin()
     local select = UI.SelectUI()
     MapSelect.GoToMap(select)
     
+     --打开自动
+        Tools.click(1160,314) 
+    --循环清理背包
+    while (true) do
+        Fight.CheckBag()
+    end
+    
+    
 end
 
 

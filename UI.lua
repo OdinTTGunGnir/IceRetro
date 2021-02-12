@@ -16,3 +16,49 @@ end
 
 
 return UI
+
+
+
+--  ---------------------  UI Show 界面  ---------------------
+-- local ts = require("ts")
+-- local cjson = ts.json
+-- w,h = getScreenSize();
+-- MyTable = {
+-- ["style"]  = "default",
+-- ["rettype"] = "table",
+-- ["width"] = 900,
+-- ["height"] = 600,
+-- ["orient"] = "1",
+-- ["bgcolor"] = "255,255,255",
+-- ["btnbkcolor"] = "255,255,255",
+-- ["config"] = "",
+-- ["pagetype"] = "multi",
+-- ["selpage"] = "1",
+-- ["pagenumtype"] = "default",
+-- ["titles"] = "第1页",
+-- ["timer"] = "120",
+-- ["cancelname"] = "取消",
+-- ["okname"] = "确定",
+-- ["titlealign"] = "left",
+-- ["titlesize"] = "15",
+-- pages=
+--           {
+--                               {
+                              
+--                                       {
+--                                       ["type"] = "CheckBoxGroup",
+--                                       ["select"] = "0",
+--                                       ["id"] = "checkbox2",
+--                                       ["list"] = "孤独之地",
+--                                       },
+--                                       {
+--                                       ["type"] = "ComboBox",
+--                                       ["id"] = "select1",
+--                                       ["list"] = "孤独之地1,孤独之地2,孤独之地3,孤独之地4",
+--                                       ["select"] = "0",
+--                                       },},
+--                   },
+                  
+-- } 
+-- local MyJsonString = cjson.encode(MyTable);
+-- UIret,values = showUI(MyJsonString)
