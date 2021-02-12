@@ -1,5 +1,9 @@
 Global = require("Global")
-init(1)
+UI = require("UI")
+--init(1)
+
+UI.ShowUI()
+
 
 Global.Begin()
 

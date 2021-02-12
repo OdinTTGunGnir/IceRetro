@@ -27,6 +27,11 @@ function Tools.home()
     mSleep(50)
     pressHomeKey(1)
 end
-
+-- 定时器
+function Tools.Timer(time)
+    for var=1,time do
+        mSleep(1000)
+    end
+end
 
 return Tools
