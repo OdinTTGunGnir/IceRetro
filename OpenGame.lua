@@ -1,15 +1,16 @@
 Tools = require("Tools")
 Debug = require("Debug")
 SearchColorHSZ = require("SearchColorHSZ")
+SearchColor = require("SearchColor")
 OpenGame = {}
 local finish = false
-local process_6 = {}
+local process = {}
 local process_hsz = {}
 local SuccessFind = {0,0,0,0,0,0,0}
 
 --iphone6和iphone6s
 -- 点击游戏Icon
-local function ClickGame_6()
+local function ClickGame()
     x,y = findMultiColorInRegionFuzzy(0xd52521, "8|64|0xffffff,65|10|0x00a7ff", 90, 0, 0, 1334, 750, { orient = 2 })
     if x ~= -1 then
         Tools.click(x , y)
@@ -19,20 +20,20 @@ local function ClickGame_6()
     end
     
 end
-process_6["ClickGame_6"] = ClickGame_6
-local function IntoGame_6()
+process["ClickGame"] = ClickGame
+local function IntoGame()
     ::IntoGame1::
-    mSleep(6000)
+    mSleep(2000)
+    -- 没有找到关闭按钮
     x,y = findMultiColorInRegionFuzzy(0x960e0e, "20|2|0x8a0707,11|19|0xddcc77,10|35|0x7d0202", 90, 996, 28, 1277, 300, { orient = 2 })
     if x ~= -1 then
         Tools.click(x , y)
     else
         Debug.Log("没有找到关闭按钮")
-        goto IntoGame1
         return false
     end
     ::IntoGame2::
-    mSleep(2000)
+    -- 没有找到开始游戏按钮
     x,y = findMultiColorInRegionFuzzy(0x82611f, "3|25|0x65441a,32|2|0xfff3d1,137|12|0xe9e08e", 90, 511, 417, 827, 545, { orient = 2 })
     if x ~= -1 then
         Tools.click(x , y)
@@ -43,6 +44,7 @@ local function IntoGame_6()
     end
     ::IntoGame3::
     mSleep(10000)
+    -- 没有找到角色界面的“进入游戏”按钮
     x,y = findMultiColorInRegionFuzzy(0xdbcaa8, "17|3|0x040303,29|3|0xcbba98,44|5|0x000000,64|-7|0xc3b29b", 90, 583, 533, 754, 662, { orient = 2 })
     if x ~= -1 then
         Tools.click(x , y - 50)
@@ -51,29 +53,49 @@ local function IntoGame_6()
         goto IntoGame3
         return false
     end
-    ::IntoGame4::
-    mSleep(2000)
+    -- 没有找到“确认”按钮
     x,y = findMultiColorInRegionFuzzy(0xcebd8a, "-2|12|0xd0d0a1,18|9|0x5f5454,15|9|0x171717,38|-16|0x888888,39|6|0x4f4f43", 90, 551, 527, 770, 636, { orient = 2 })
     if x ~= -1 then
         Tools.click(x , y)
     else
-        Debug.Log("没有找到“确认”按钮")
-        goto IntoGame4
-        return false
     end
     return true
 end
-process_6["IntoGame_6"] = IntoGame_6
+process["IntoGame"] = IntoGame
 
 --红手指
 local function ClickGame_hsz()
-    -- local flag,x,y = SearchColorHSZ.search("OpenGame",x1,y1)
-    -- if flag  then
-    --     Tools.click(x,y)
-    -- end
+    local flag,x,y = SearchColorHSZ.search("OpenGame",x1,y1)
+    if flag  then
+        Tools.click(x,y)
+    end
 end
 process_hsz["ClickGame_hsz"] = ClickGame_hsz
 local function IntoGame_hsz()
+     mSleep(2000)
+     
+    --关闭更新提示
+    local x ,y = SearchColor.search("CloseNotice") 
+    if x ~= -1 then
+       
+    --登陆
+    else if SearchColor.search("Login") then
+        
+    --开始游戏   
+    else if SearchColor.search("StartGame") then
+        
+    --选择角色 
+    else if SearchColor.search("SelectPlayer") then
+
+    --进入游戏    
+    else if SearchColor.search("Enter") then   
+        
+    end
+    end
+    end
+    end
+    end
+    
     --关闭更新提示
     function CloseNotice()
         if SuccessFind[0] ~= 1 then
@@ -151,6 +173,19 @@ process_hsz["IntoGame_hsz"] = IntoGame_hsz
 function OpenGame.openGame(id)
     mSleep(1000)
     --Tools.home()
+    
+    
+     for key, val in pairs(process) do
+            local OpenTimes = 0
+            OpenTimes = OpenTimes + 1
+            mSleep(3000)
+            Finish = val()
+            if Finish == false then
+              
+            end
+    end
+    
+    
     if id=="6" then
         for key, val in pairs(process_6) do
             Debug.Log(key)

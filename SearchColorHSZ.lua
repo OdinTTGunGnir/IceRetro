@@ -1,6 +1,6 @@
 SearchColorHSZ = {}
 
-function SearchColorHSZ.search(id,x1,y1)
+function SearchColorHSZ.search(id)
     
      local flag
     --判断id
@@ -79,7 +79,7 @@ function SearchColorHSZ.search(id,x1,y1)
         end
     end
     
-    return flag,x1,y1
+    return x1,y1
 end
 
 return SearchColorHSZ

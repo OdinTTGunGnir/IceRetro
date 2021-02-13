@@ -11,7 +11,7 @@ SearchColorHSZ = require("SearchColorHSZ")
 
 
 local Finish = false
-
+Global.Device = UI.device
 
 function huicheng()
     --循环查找回城石
@@ -54,7 +54,7 @@ function Global.Begin()
     -- Debug.Log("移动成功，移动至：")
     huicheng()
     
-    local select = UI.SelectUI()
+    local select = UI.SelectMap()
     MapSelect.GoToMap(select)
     
      --打开自动
