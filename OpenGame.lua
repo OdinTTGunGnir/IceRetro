@@ -65,15 +65,17 @@ local finish = false
 
 --红手指
 local function ClickGameIcon()
+    -- Tools.click(426, 235)
     
+    init(0)
     ::icon1::
-    nLog(123)
+    
     local x,y = SearchColor.search("OpenGame")
     if x~=-1  then
         Tools.click(x,y)
         goto icon1
     end
-    
+    init(1)
     return true
 end
 -- process["ClickGameIcon"] = ClickGameIcon
@@ -184,7 +186,7 @@ local function IntoGame()
     -- SelectPlayer()
     -- Enter()
 end
-process = {ClickGameIcon,IntoGame,1}
+process = {ClickGameIcon,IntoGame}
 
 function OpenGame.openGame()
     mSleep(1000)
@@ -193,6 +195,7 @@ function OpenGame.openGame()
     for key, val in ipairs(process) do
          mSleep(1000)
         ::s1::
+            nLog(key)
             mSleep(3000)
             Finish = val()
             if Finish == false then

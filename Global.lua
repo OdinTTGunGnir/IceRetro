@@ -8,7 +8,7 @@ Global.MoveTo = require("MoveTo")
 
 UI = require("UI")
 SearchColor = require("SearchColor")
-
+MapSelect = require("MapSelect")
 
 local Finish = false
 Global.Device = UI.GetDevice()

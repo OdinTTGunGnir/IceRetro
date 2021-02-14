@@ -2,7 +2,7 @@ MapSelect = {}
 Tools = require("Tools")
 Debug = require("Debug")
 Fight = require("Fight")
-SearchColorHSZ = require("SearchColorHSZ")
+SearchColor = require("SearchColor")
 function ClickMap()
     Tools.click(1160,80)
 end
@@ -21,8 +21,8 @@ function MapSelect.GoTOBingxue()
     --循环查找是否白屏
     local baipingflag = false
     while (baipingflag ~= true) do
-        local flag,x,y = SearchColorHSZ.search("baiping",x1,y1)
-        if flag then
+        local x,y = SearchColor.search("baiping")
+        if x~=-1 then
             baipingflag = true
         else    
             Debug.Log("地图白屏")
@@ -37,8 +37,8 @@ function MapSelect.GoTOBingxue()
     --循环查找老兵，避免被人物遮挡
     local laobingflag = false
     while (laobingflag ~= true) do
-        local flag,x,y = SearchColorHSZ.search("laobing",x1,y1)
-        if flag then
+        local x,y = SearchColor.search("laobing")
+        if x ~= -1 then
             Tools.click(x,y)
             laobingflag = true
         else    
@@ -65,8 +65,8 @@ function MapSelect.GpToGudu(index)
         --循环查找孤独之地
         local guduflag = false
         while (guduflag ~= true) do
-            local flag,x,y = SearchColorHSZ.search("gudu",x1,y1)
-            if flag then
+            local x,y = SearchColor.search("gudu")
+            if x ~= -1 then
                 Tools.click(x,y)
                 guduflag = true
             else    
