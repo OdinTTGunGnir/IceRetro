@@ -65,6 +65,7 @@ local process = {}
 
 --红手指
 local function ClickGameIcon()
+    
     ::icon1::
     local x,y = SearchColor.search("OpenGame")
     if x~=-1  then
@@ -105,7 +106,12 @@ local function IntoGame()
        Tools.click(x,y)
     end
     
-    return true
+     --进入游戏  
+    local x ,y = SearchColor.search("Btn_Player") 
+    if x ~= -1 then
+       return true
+    end
+    return false
     -- --关闭更新提示
     -- function CloseNotice()
     --     if SuccessFind[0] ~= 1 then
