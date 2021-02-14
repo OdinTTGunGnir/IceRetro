@@ -180,7 +180,7 @@ local function IntoGame()
 end
 process["IntoGame"] = IntoGame
 
-function OpenGame.openGame(id)
+function OpenGame.openGame()
     mSleep(1000)
     --Tools.home()
     

@@ -1,5 +1,5 @@
 SearchColorHSZ = {}
-
+ColorTable = {}
 --打开游戏
 ColorTable["OpenGame"] = findMultiColorInRegionFuzzy(0x06daff, "3|0|0x000624,9|0|0x000315,25|3|0x00d1ff,19|3|0x0fc7f5,18|0|0x17baf6", 90, 45, 178, 685, 637, { orient = 2 })
 --关闭开服公告
