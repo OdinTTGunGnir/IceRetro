@@ -4,18 +4,14 @@ SearchColorHSZ = require("SearchColorHSZ")
 SearchColorIPHONE6 = require("SearchColorIPHONE6")
 
 function SearchColor.search(id) 
-    result = false
-    nLog(id)
-    if UI.GetDevice == "红手指" then
-        result = true
+    nLog(UI.GetDevice)
+    if UI.GetDevice() == "红手指" then
         return SearchColorHSZ.search(id)
-    elseif  UI.GetDevice == "Iphone6" then
-        result = true
+    elseif  UI.GetDevice() == "Iphone6" then
         return SearchColorIPHONE6.search(id)
     end
+    return -1,-1
     
-    
-    return result
 end
 
 

@@ -35,7 +35,7 @@ function SearchColorHSZ.search(id)
         return ColorTable[id];
     end
     toast("没找到色")
-    return nil
+    return -1,-1
     --  local flag
     --判断id
     -- --打开游戏

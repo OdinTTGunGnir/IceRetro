@@ -4,7 +4,7 @@ SearchColorHSZ = require("SearchColorHSZ")
 SearchColor = require("SearchColor")
 OpenGame = {}
 local finish = false
-local process = {}
+-- local process = {}
 -- local process_hsz = {}
 -- local SuccessFind = {0,0,0,0,0,0,0}
 
@@ -67,16 +67,16 @@ local process = {}
 local function ClickGameIcon()
     
     ::icon1::
+    nLog(123)
     local x,y = SearchColor.search("OpenGame")
     if x~=-1  then
         Tools.click(x,y)
         goto icon1
-        else return true
     end
     
     return true
 end
-process["ClickGameIcon"] = ClickGameIcon
+-- process["ClickGameIcon"] = ClickGameIcon
 local function IntoGame()
      mSleep(2000)
      
@@ -184,14 +184,14 @@ local function IntoGame()
     -- SelectPlayer()
     -- Enter()
 end
-process["IntoGame"] = IntoGame
+process = {ClickGameIcon,IntoGame,1}
 
 function OpenGame.openGame()
     mSleep(1000)
     --Tools.home()
-    
-    
-     for key, val in pairs(process) do
+  
+    for key, val in ipairs(process) do
+         mSleep(1000)
         ::s1::
             mSleep(3000)
             Finish = val()
