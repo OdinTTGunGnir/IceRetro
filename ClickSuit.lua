@@ -17,7 +17,18 @@ function ClickSuit.huicheng()
         mSleep(3000)
 end
 
-
+function ClickSuit.CloseBtn()
+   
+    
+    repeat
+        mSleep(1000)
+        local x,y  = SearchColor.search("CloseBtn")
+        if x ~= -1 then 
+            Tools.click(x,y)
+        end
+    until( x == -1 )
+    
+end
 
 
 

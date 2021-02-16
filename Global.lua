@@ -30,7 +30,6 @@ function Global.Begin()
     --     Finish = Global.GameConfig.gameConfig()
     -- until( Finish )
     -- Debug.Log("游戏配置成功")
-    ClickSuit.huicheng()
     -- 移动至
     repeat
         Finish = MoveTo.moveTo(UI.SelectMap())

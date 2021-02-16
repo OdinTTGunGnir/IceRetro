@@ -28,7 +28,12 @@ function SearchColorHSZ.search(id)
     elseif id == "baiping" then return findMultiColorInRegionFuzzy(0x3d4416, "-32|15|0x57682a,10|30|0x3d4614,46|20|0x4f4f1d,47|-7|0x445223,328|134|0x786544", 90, 257, 197, 877, 556, { orient = 2 })
     --是否包满
     elseif id == "baoman" then return findMultiColorInRegionFuzzy(0xdd260c, "15|16|0xbe872b,8|27|0xa68560,23|13|0xa19477,20|30|0x5e411a", 90, 1077, 187, 1194, 279, { orient = 2 })
+    --关闭按钮
+    elseif id == "CloseBtn" then return findMultiColorInRegionFuzzy(0xcdbc67, "7|1|0xdec389,4|6|0xe0cf7a,4|15|0x800203", 90, 0, 0, 1280, 720, { orient = 2 })
     end
+    
+    
+    
     
     toast("找色ID未定义")
     return -1,-1

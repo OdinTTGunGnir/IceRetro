@@ -1,6 +1,7 @@
 Tools = require("Tools")
 Debug = require("Debug")
 SearchColor = require("SearchColor")
+ClickSuit = require("ClickSuit")
 MoveTo = {}
 
 local finish = false
@@ -19,7 +20,10 @@ function CloseMap()
     end 
 end 
 --前往冰雪之城
-function MoveTo.GoTOBingxue()
+local function GoTOBingxue()
+    
+    ClickSuit.huicheng()
+        
     --打开地图
     ClickMap()
     --循环查找是否白屏
@@ -53,7 +57,7 @@ function MoveTo.GoTOBingxue()
     Tools.click(920,500) 
     mSleep(5000)
 end    
-function MoveTo.GpToGudu(index)
+local function GpToGudu(index)
     --打开地图
         ClickMap()
         mSleep(2000)
@@ -87,28 +91,52 @@ function MoveTo.GpToGudu(index)
         Tools.click(920,500) 
         mSleep(5000)
 end
+
+local function GoToAnHei(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(462,322) -- 点击地图上黑暗魔窟的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(627,241) -- 点击黑暗魔窟地图
+    Tools.click(266,181) -- 进入黑暗魔窟地图
+    
+    
+    
+    
+end
+
+
 function MoveTo.moveTo(name)
+    
     if name == "孤独之地1" then
         --前往冰雪之城
-        MoveTo.GoTOBingxue()
+        GoTOBingxue()
         --前往孤独之地
-        MoveTo.GpToGudu(1)
+        GpToGudu(1)
     elseif name == "孤独之地2" then
         --前往冰雪之城
-        MoveTo.GoTOBingxue()
+        GoTOBingxue()
         --前往孤独之地
-        MoveTo.GpToGudu(2)
+        GpToGudu(2)
     elseif name == "孤独之地3" then
         --前往冰雪之城
-        MoveTo.GoTOBingxue()
+        GoTOBingxue()
         --前往孤独之地
-        MoveTo.GpToGudu(3)
+        GpToGudu(3)
     elseif name == "孤独之地4" then
         --前往冰雪之城
-        MoveTo.GoTOBingxue()
+        GoTOBingxue()
         --前往孤独之地
-        MoveTo.GpToGudu(4)
+        GpToGudu(4)
+    elseif name == "暗黑魔窟1" then
+        --前往暗黑魔窟
+        GoToAnHei()
     end
+    
     
     return true
 end
