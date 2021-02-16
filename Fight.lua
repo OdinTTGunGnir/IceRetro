@@ -17,9 +17,10 @@ function HuiShou()
     mSleep(500)
 end
 function Fight.CheckBag()
-    Tools.timer(30)
+   
     OpenBag()
     HuiShou()
+     Tools.Timer(30)
 end    
 
 
