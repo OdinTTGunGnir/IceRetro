@@ -101,8 +101,8 @@ local function GoToAnHei(index)
     Tools.click(462,322) -- 点击地图上黑暗魔窟的位置
     ClickSuit.CloseBtn()
     
-    Tools.click(627,241) -- 点击黑暗魔窟地图
-    Tools.click(266,181) -- 进入黑暗魔窟地图
+    -- Tools.click(627,241) -- 点击黑暗魔窟地图
+    -- Tools.click(266,181) -- 进入黑暗魔窟地图
     
     
     
