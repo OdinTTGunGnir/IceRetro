@@ -20,7 +20,7 @@ function CloseMap()
     end 
 end 
 --前往冰雪之城
-local function GoTOBingxue()
+local function GoToBingxue()
     
     ClickSuit.huicheng()
         
@@ -91,7 +91,6 @@ local function GpToGudu(index)
         Tools.click(920,500) 
         mSleep(5000)
 end
-
 local function GoToAnHei(index)
     
     ClickSuit.CloseBtn()
@@ -101,41 +100,236 @@ local function GoToAnHei(index)
     Tools.click(462,322) -- 点击地图上黑暗魔窟的位置
     ClickSuit.CloseBtn()
     
-    -- Tools.click(627,241) -- 点击黑暗魔窟地图
-    -- Tools.click(266,181) -- 进入黑暗魔窟地图
+    Tools.click(627,241) -- 点击黑暗魔窟地图
+    Tools.click(266,181) -- 进入黑暗魔窟地图
+end
+local function GoToQiuMoLianYu(index)
     
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(460,315) -- 点击地图上囚魔炼狱的位置
+    ClickSuit.CloseBtn()
     
+    Tools.click(573,370) -- 点击囚魔炼狱地图
+    Tools.click(414,180) -- 进入囚魔炼狱地图
+end
+local function GoToDiXiaCheng(index)
     
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(460,318) -- 点击地图上迷失地下城的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(573,335) -- 点击迷失地下地图
+    Tools.click(414,180) -- 进入迷失地下地图
+end
+local function GoToHuangQuanZhiLu(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(460,311) -- 点击地图上黄泉之路的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(572,505) -- 点击黄泉之路地图
+    Tools.click(337,180) -- 进入黄泉之路地图
+end
+local function GoToXueLongChaoXue(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(460,311) -- 点击地图上血龙巢穴的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(572,318) -- 点击血龙巢穴地图
+    Tools.click(414,180)  -- 进入血龙巢穴地图
+end
+local function GoToShenMiXiaGu(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(460,311) -- 点击地图上神秘峡谷的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(572,140) -- 点击神秘峡谷地图
+    Tools.click(414,180) -- 进入神秘峡谷地图
+end
+local function GoToTianDiZhiYu(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(454,319) -- 点击地图上天地之域的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(840,458) -- 点击天地之域地图
+    if index==1 then
+        Tools.click(433,122) -- 进入天地之域-天地图
+    else
+        Tools.click(433,182) -- 进入天地之域-地地图
+    end
+end
+local function GoToHaiWaiXianGong(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(454,319) -- 点击地图上海外仙宫的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(574,458) -- 点击海外仙宫地图
+    Tools.click(414,180)  -- 进入海外仙宫地图
     
 end
 
+local function GoToShiWaiTaoYuan(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(452,319) -- 点击地图上世外桃源的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(520,458) -- 点击世外桃源地图
+    Tools.click(414,180)  -- 进入世外桃源地图
+    
+end
 
+local function GoToQiYuanBingCheng(index)
+    
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(790,254) -- 点击地图上起源冰城的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(977,335) -- 点击起源冰城地图
+    --Tools.click(837,505)  --进入起源冰城地图
+    
+end
+
+local function GoToJiuShiJie(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(750,270) -- 点击地图上旧世界的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(435,470) -- 点击旧世界地图
+    Tools.click(837,505) --进入旧世界地图
+end
+local function GoToXinShiJie(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(750,270) -- 点击地图上新世界的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(710,470) -- 点击新世界地图
+    Tools.click(837,505) --进入新世界地图
+end
+local function GoToJingDian(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(780,270) -- 点击地图上经典之路的位置
+    ClickSuit.CloseBtn()
+    
+     Tools.click(500,460) -- 点击经典之路地图
+    Tools.click(837,505) --进入经典之路地图
+end
+local function GoToQiYuanGongDian(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(780,270) -- 点击地图上起源宫殿的位置
+    ClickSuit.CloseBtn()
+    
+     Tools.click(840,460) -- 点击起源宫殿地图
+    Tools.click(358,184) --进入起源宫殿地图
+end
+
+
+
+local function GoToHeiAnZhiSen(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(810,265) -- 点击地图上黑暗之森的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(505,359) -- 点击黑暗之森地图
+    Tools.click(837,505) --进入黑暗之森地图
+end
+
+local function GoToShangGuZhiDi(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(815,265) -- 点击地图上古之地的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(970,255) -- 点击上古之地地图
+    Tools.click(837,505) --进入上古之地地图
+end
+
+
+local function GoToHuoLong(index)
+    ClickSuit.CloseBtn()
+    mSleep(500)
+    ClickMap()
+    mSleep(1500)
+    Tools.click(745,248) -- 点击火魔龙窟的位置
+    ClickSuit.CloseBtn()
+    
+    Tools.click(575,470) -- 点击火魔龙窟地图
+    Tools.click(837,505) --进入火魔龙窟地图
+end
 function MoveTo.moveTo(name)
     
-    if name == "孤独之地1" then
-        --前往冰雪之城
-        GoTOBingxue()
-        --前往孤独之地
-        GpToGudu(1)
-    elseif name == "孤独之地2" then
-        --前往冰雪之城
-        GoTOBingxue()
-        --前往孤独之地
-        GpToGudu(2)
-    elseif name == "孤独之地3" then
-        --前往冰雪之城
-        GoTOBingxue()
-        --前往孤独之地
-        GpToGudu(3)
-    elseif name == "孤独之地4" then
-        --前往冰雪之城
-        GoTOBingxue()
-        --前往孤独之地
-        GpToGudu(4)
-    elseif name == "暗黑魔窟1" then
-        --前往暗黑魔窟
-        GoToAnHei()
-    end
+    -- if name == "孤独之地1" then
+    --     --前往冰雪之城
+    --     GoToBingxue()
+    --     --前往孤独之地
+    --     GpToGudu(1)
+    -- elseif name == "孤独之地2" then
+    --     --前往冰雪之城
+    --     GoToBingxue()
+    --     --前往孤独之地
+    --     GpToGudu(2)
+    -- elseif name == "孤独之地3" then
+    --     --前往冰雪之城
+    --     GoToBingxue()
+    --     --前往孤独之地
+    --     GpToGudu(3)
+    -- elseif name == "孤独之地4" then
+    --     --前往冰雪之城
+    --     GoToBingxue()
+    --     --前往孤独之地
+    --     GpToGudu(4)
+    -- elseif name == "暗黑魔窟1" then
+    --     --前往暗黑魔窟
+    --     GoToAnHei()
+    -- end
     
     
     return true
