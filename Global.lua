@@ -18,6 +18,7 @@ local huichengflag = true
 
 function Global.Begin()
     
+    ::BeginGame::
     --进入游戏游戏
     repeat
         Finish = Global.OpenGame.openGame(Global.Device)--根据手机型号,进入游戏 hsz（红手指） 6（iphone6）
@@ -31,16 +32,23 @@ function Global.Begin()
     -- until( Finish )
     -- Debug.Log("游戏配置成功")
     -- 移动至
+    
+    ::MoveToMap::
     repeat
         Finish = MoveTo.moveTo(UI.SelectMap())
     until( Finish )
     Debug.Log("移动成功，移动至：")
  
      --打开自动
-        Tools.click(1160,314) 
+    Tools.click(1160,314)
+    
+        
     --循环清理背包
     while (true) do
+        
         Fight.CheckBag()
+        mSleep(10000)
+
     end
     
     

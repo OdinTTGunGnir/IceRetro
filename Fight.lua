@@ -1,8 +1,19 @@
 Fight = {}
 Tools = require("Tools")
 Debug = require("Debug")
+ClickSuit = require("ClickSuit")
+SearchColor = require("SearchColor")
 
 function OpenBag()
+    mSleep(1000)
+    ClickSuit.CloseBtn()
+    
+    local x ,y = SearchColor.search("baoman")
+    if x ~= -1 then
+       Tools.click(x,y)
+    --   goto Next
+    end
+    -- ::Next::
     Tools.click(1150,230)
     mSleep(1500)
 end

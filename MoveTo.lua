@@ -2,6 +2,7 @@ Tools = require("Tools")
 Debug = require("Debug")
 SearchColor = require("SearchColor")
 ClickSuit = require("ClickSuit")
+FindFont = require("FindFont")
 MoveTo = {}
 
 local finish = false
@@ -93,15 +94,25 @@ local function GpToGudu(index)
 end
 local function GoToAnHei(index)
     
+    ClickSuit.huicheng()
+    
     ClickSuit.CloseBtn()
     mSleep(500)
     ClickMap()
     mSleep(1500)
     Tools.click(462,322) -- 点击地图上黑暗魔窟的位置
     ClickSuit.CloseBtn()
-    
+    repeat
+        mSleep(5000)
+        local x,y = FindFont.findFont("325,344")
+    until( x ~= -1 )
     Tools.click(627,241) -- 点击黑暗魔窟地图
     Tools.click(266,181) -- 进入黑暗魔窟地图
+    
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("黑暗魔窟一层")
+    until( x ~= -1 )
 end
 local function GoToQiuMoLianYu(index)
     
@@ -306,30 +317,30 @@ local function GoToHuoLong(index)
 end
 function MoveTo.moveTo(name)
     
-    -- if name == "孤独之地1" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(1)
-    -- elseif name == "孤独之地2" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(2)
-    -- elseif name == "孤独之地3" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(3)
-    -- elseif name == "孤独之地4" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(4)
-    -- elseif name == "暗黑魔窟1" then
-    --     --前往暗黑魔窟
-    --     GoToAnHei()
-    -- end
+    if name == "孤独之地1" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(1)
+    elseif name == "孤独之地2" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(2)
+    elseif name == "孤独之地3" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(3)
+    elseif name == "孤独之地4" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(4)
+    elseif name == "暗黑魔窟1" then
+        --前往暗黑魔窟
+        GoToAnHei()
+    end
     
     
     return true
