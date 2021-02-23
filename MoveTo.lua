@@ -124,6 +124,16 @@ local function GoToAnHei(index)
         mSleep(3000)
         local x,y = FindFont.findFont("黑暗魔窟一层")
     until( x ~= -1 )
+    
+    if index==1 then
+    elseif index==2 then
+        ClickMap()
+        mSleep(1000)
+        Tools.click(577,351)
+    elseif index==3 then
+    elseif index==4 then
+    end
+    
 end
 local function GoToQiuMoLianYu(index)
     ClickSuit.huicheng()
@@ -404,6 +414,12 @@ local function GoToHuoLong(index)
     until( x ~= -1 )
 end
 function MoveTo.moveTo(name)
+    ClickMap()
+    mSleep(1000)
+    Tools.click(577,351)
+    --Tools.click(594,365)
+    
+        
     -- if name == "孤独之地1" then
     --     --前往冰雪之城
     --     GoToBingxue()
@@ -426,7 +442,7 @@ function MoveTo.moveTo(name)
     --     GpToGudu(4)
     -- elseif name == "暗黑魔窟1" then
     --     --前往暗黑魔窟
-    --     GoToAnHei()
+    --     GoToAnHei(1)
     -- end
     
     

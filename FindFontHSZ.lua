@@ -36,6 +36,8 @@ function FindFontHSZ.findFont(id)
     elseif id == "上古之地一层" then return tsFindText(index, "上古之地一层",1092, 3, 1274, 30, "F1E8DD , 545250", 90)    
     elseif id == "202,72" then return tsFindText(index, "202,72",1170,131,1276,169, "F1E8DD , 545250", 90)
     elseif id == "202,72" then return tsFindText(index, "火龙魔窟一层",1092, 3, 1274, 30, "F1E8DD , 545250", 90)
+        
+    elseif id == "154,162" then return tsFindText(index, "154,162",1170,131,1276,169, "CEC5B9 , 171614", 90)
     end 
     Debug.log("找字ID未定义")
     return -1,-1
