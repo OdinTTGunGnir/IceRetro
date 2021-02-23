@@ -7,6 +7,8 @@ function UI.ShowUI()
     UICheck(1,"map1","孤独之地","0")
     UICombo(1,"gudu","孤独之地1,孤独之地2,孤独之地3,孤独之地4","0")
     UIRadio(1,"device","红手指,Iphone6","0")
+    UILabel(1,"清理背包：",15,"left","38,38,38")
+    UIEdit(1,"BeiBaoTime","30（秒）","内容",15,"left","38,38,38","default")
     UIShow()
 
 end
@@ -17,6 +19,10 @@ function UI.SelectMap()
 end
 function UI.GetDevice()
     return device
+end
+
+function UI.BeiBao_TIME()
+    return BeiBaoTime
 end
 
 return UI

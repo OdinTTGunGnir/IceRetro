@@ -32,6 +32,8 @@ function SearchColorHSZ.search(id)
     elseif id == "CloseBtn" then return findMultiColorInRegionFuzzy(0xcdbc67, "7|1|0xdec389,4|6|0xe0cf7a,4|15|0x800203", 90, 0, 0, 1280, 720, { orient = 2 })
     --背包按钮
     elseif id == "Btn_BeiBao" then return findMultiColorInRegionFuzzy(0xc99641, "24|3|0x634c31,28|17|0x54391c,14|20|0xebc688,4|22|0x966330,37|19|0x765537", 90, 0, 0, 1280, 720, { orient = 2 })
+    --元宝
+    elseif id == "YuanBao" then return findMultiColorInRegionFuzzy(0xcfb75d, "16|-1|0xd9b10f,28|-1|0xb3912f,6|11|0xa07617,23|9|0x5b3811", 90, 0, 0, 1280, 720, { orient = 2 })
     end
     
     

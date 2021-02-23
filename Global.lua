@@ -39,15 +39,27 @@ function Global.Begin()
     until( Finish )
     Debug.Log("移动成功，移动至：")
  
+    mSleep(3000)
+    
      --打开自动
     Tools.click(1160,314)
     
-        
+    mSleep(1000)
     --循环清理背包
     while (true) do
         
+        ClickSuit.CloseBtn()
+        
+        local x ,y = SearchColor.search("Btn_BeiBao")
+        if x == -1 then
+           x ,y = SearchColor.search("baoman")
+            if x == -1 then
+               goto BeginGame
+            end
+        end
+        
         Fight.CheckBag()
-        mSleep(10000)
+        mSleep(UI.BeiBao_TIME)
 
     end
     
