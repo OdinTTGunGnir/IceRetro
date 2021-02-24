@@ -8,7 +8,7 @@ function UI.ShowUI()
     UICombo(1,"gudu","孤独之地1,孤独之地2,孤独之地3,孤独之地4","0")
     UIRadio(1,"device","红手指,Iphone6","0")
     UILabel(1,"清理背包：",15,"left","38,38,38")
-    UIEdit(1,"BeiBaoTime","30（秒）","内容",15,"left","38,38,38","default")
+    UIEdit(1,"BeiBaoTime","30（秒）","30",15,"left","38,38,38","default")
     UIShow()
 
 end
