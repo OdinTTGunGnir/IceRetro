@@ -35,7 +35,8 @@ function Global.Begin()
     
     ::MoveToMap::
     repeat
-        Finish = MoveTo.moveTo(UI.SelectMap())
+        --Finish = MoveTo.moveTo(UI.SelectMap())
+        Finish = MoveTo.moveTo("暗黑魔窟1")
     until( Finish )
     Debug.Log("移动成功，移动至：")
  

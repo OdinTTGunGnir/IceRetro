@@ -279,7 +279,6 @@ local function GoToShiWaiTaoYuan(index)
         local x,y = FindFont.findFont("世外桃源")
     until( x ~= -1 )
 end
-
 local function ErDaLuInit()
     GoToBingxue()
     repeat
@@ -290,7 +289,6 @@ local function ErDaLuInit()
     ClickMap()
     mSleep(2000)
 end    
-
 local function GoToQiYuanBingCheng(index)
     ErDaLuInit()
     Tools.click(790,254) -- 点击地图上起源冰城的位置
@@ -413,37 +411,38 @@ local function GoToHuoLong(index)
         local x,y = FindFont.findFont("火魔龙窟")
     until( x ~= -1 )
 end
+
 function MoveTo.moveTo(name)
-    ClickMap()
-    mSleep(1000)
-    Tools.click(577,351)
+    -- ClickMap()
+    -- mSleep(1000)
+    -- Tools.click(577,351)
     --Tools.click(594,365)
     
         
-    -- if name == "孤独之地1" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(1)
-    -- elseif name == "孤独之地2" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(2)
-    -- elseif name == "孤独之地3" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(3)
-    -- elseif name == "孤独之地4" then
-    --     --前往冰雪之城
-    --     GoToBingxue()
-    --     --前往孤独之地
-    --     GpToGudu(4)
-    -- elseif name == "暗黑魔窟1" then
-    --     --前往暗黑魔窟
-    --     GoToAnHei(1)
-    -- end
+    if name == "孤独之地1" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(1)
+    elseif name == "孤独之地2" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(2)
+    elseif name == "孤独之地3" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(3)
+    elseif name == "孤独之地4" then
+        --前往冰雪之城
+        GoToBingxue()
+        --前往孤独之地
+        GpToGudu(4)
+    elseif name == "暗黑魔窟1" then
+        --前往暗黑魔窟
+        GoToAnHei(1)
+    end
     
     
     return true

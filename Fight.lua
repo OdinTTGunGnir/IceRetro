@@ -18,14 +18,6 @@ function HuiShou()
     Tools.click(1027,530)
     mSleep(500)
 end
-function Fight.CheckBag()
-   
-    OpenBag()
-    HuiShou()
-    yuanbaoANDjingyan()
-    
-end    
-
 local function yuanbaoANDjingyan()
 
     repeat
@@ -40,6 +32,16 @@ local function yuanbaoANDjingyan()
         end
     until(( x == -1 ) and  ( x1 == -1 ))
 end
+
+function Fight.CheckBag()
+   
+    OpenBag()
+    HuiShou()
+    yuanbaoANDjingyan()
+    
+end    
+
+
     
 
 
