@@ -10,7 +10,7 @@ UI = require("UI")
 SearchColor = require("SearchColor")
 ClickSuit = require("ClickSuit")
 Fight = require("Fight")
-
+FindFont = require("FindFont")
 local Finish = false
 Global.Device = UI.GetDevice()
 local huichengflag = true
@@ -55,7 +55,10 @@ function Global.Begin()
         if x == -1 then
            goto BeginGame
         end
-        
+        local x,y = FindFont.findFont("地之域")
+        if x == -1 then
+           goto MoveToMap
+        end
         Fight.CheckBag()
         mSleep(UI.BeiBao_TIME() * 1000)
 
