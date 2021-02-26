@@ -1,12 +1,14 @@
 Global = require("Global")
 UI = require("UI")
-init(0)
+SearchColor = require("SearchColor")
+init(1)
 
 UI.ShowUI()
 
 Global.Begin()
-
-
+-- local x ,y = SearchColor.search("YuanBao2")
+       
+-- dialog(x..","..y)
 
 --  MoveTo = require("MoveTo")
 

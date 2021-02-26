@@ -36,31 +36,28 @@ function Global.Begin()
     ::MoveToMap::
     repeat
         --Finish = MoveTo.moveTo(UI.SelectMap())
-        Finish = MoveTo.moveTo("暗黑魔窟1")
+        Finish = MoveTo.moveTo("天空之城（地）")
     until( Finish )
     Debug.Log("移动成功，移动至：")
  
-    mSleep(3000)
+    mSleep(5000)
     
      --打开自动
     Tools.click(1160,314)
     
-    mSleep(1000)
+    mSleep(10000)
     --循环清理背包
     while (true) do
         
         ClickSuit.CloseBtn()
         
-        local x ,y = SearchColor.search("Btn_BeiBao")
+        local x ,y = SearchColor.search("Btn_Player")
         if x == -1 then
-           x ,y = SearchColor.search("baoman")
-            if x == -1 then
-               goto BeginGame
-            end
+           goto BeginGame
         end
         
         Fight.CheckBag()
-        mSleep(UI.BeiBao_TIME)
+        mSleep(UI.BeiBao_TIME() * 1000)
 
     end
     

@@ -2,6 +2,7 @@ Debug = {}
 -- 点击
 function Debug.Log(content)
     toast(content)
+    nLog(content)
     mSleep(2000)
 end
 

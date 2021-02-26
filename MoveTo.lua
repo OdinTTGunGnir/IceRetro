@@ -442,6 +442,9 @@ function MoveTo.moveTo(name)
     elseif name == "暗黑魔窟1" then
         --前往暗黑魔窟
         GoToAnHei(1)
+    elseif name == "天空之城（地）" then
+        --前往地之狱
+        GoToTianDiZhiYu(-1)
     end
     
     

@@ -63,7 +63,6 @@ function OpenGame.openGame()
     for key, val in ipairs(process) do
          mSleep(1000)
         ::s1::
-            nLog(key)
             mSleep(3000)
             Finish = val()
             if Finish == false then
