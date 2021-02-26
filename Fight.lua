@@ -8,9 +8,9 @@ function OpenBag()
     mSleep(1000)
     ClickSuit.CloseBtn()
     
-    local x ,y = SearchColor.search("Btn_BeiBao")
+    local x ,y = SearchColor.search("Btn_Player")
     if x ~= -1 then
-       Tools.click(x,y)
+       Tools.click(x - 90,y)
     end
     mSleep(1000)
 end
