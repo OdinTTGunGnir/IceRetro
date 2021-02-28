@@ -35,10 +35,10 @@ function Global.Begin()
     
     ::MoveToMap::
     repeat
-        --Finish = MoveTo.moveTo(UI.SelectMap())
-        Finish = MoveTo.moveTo("天空之城（地）")
+        Finish = MoveTo.moveTo(UI.SelectMap())
+    --  Finish = MoveTo.moveTo("天空之城（地）")
     until( Finish )
-    Debug.Log("移动成功，移动至：")
+    --Debug.Log("移动成功，移动至："+UI.SelectMap())
  
     mSleep(5000)
     
@@ -55,12 +55,13 @@ function Global.Begin()
         if x == -1 then
            goto BeginGame
         end
-        local x,y = FindFont.findFont("地之域")
+        local x,y = FindFont.findFont(UI.SelectMap())
         if x == -1 then
            goto MoveToMap
         end
         Fight.CheckBag()
-        mSleep(UI.BeiBao_TIME() * 1000)
+        --mSleep(UI.BeiBao_TIME() * 1000)
+        mSleep(30 * 1000)
 
     end
     
