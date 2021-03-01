@@ -6,6 +6,7 @@ init(1)
 UI.ShowUI()
 
 Global.Begin()
+
 -- local x ,y = SearchColor.search("YuanBao2")
        
 -- dialog(x..","..y)
@@ -38,4 +39,5 @@ Global.Begin()
 -- local index = addTSOcrDict("Font.txt")
 -- x, y = tsFindText(index, "325,344",1165,131,1276,169, "D9D1C7 , 5A5755", 90)
 -- dialog("识别到的坐标  x:"..x.." , y:"..y)
+
 

@@ -17,7 +17,6 @@ local huichengflag = true
 
 
 function Global.Begin()
-    
     ::BeginGame::
     --进入游戏游戏
     repeat
@@ -32,18 +31,20 @@ function Global.Begin()
     -- until( Finish )
     -- Debug.Log("游戏配置成功")
     -- 移动至
+    ClickSuit.CloseBtn()
     
     ::MoveToMap::
     repeat
         Finish = MoveTo.moveTo(UI.SelectMap())
-    --  Finish = MoveTo.moveTo("天空之城（地）")
+        --  Finish = MoveTo.moveTo("天空之城（地）")
     until( Finish )
     --Debug.Log("移动成功，移动至："+UI.SelectMap())
  
     mSleep(5000)
-    
-     --打开自动
+    ::Auto::
+    --打开自动
     Tools.click(1160,314)
+    
     
     mSleep(10000)
     --循环清理背包
@@ -53,13 +54,20 @@ function Global.Begin()
         
         local x ,y = SearchColor.search("Btn_Player")
         if x == -1 then
-           goto BeginGame
+            goto BeginGame
         end
         local x,y = FindFont.findFont(UI.SelectMap())
         if x == -1 then
-           goto MoveToMap
+            goto MoveToMap
         end
+        
+        local x3,y3 = SearchColor.search("ZiDong")
+        if x3 == -1 then
+           goto Auto
+        end
+        
         Fight.CheckBag()
+
         --mSleep(UI.BeiBao_TIME() * 1000)
         mSleep(30 * 1000)
 

@@ -3,6 +3,7 @@ Debug = require("Debug")
 SearchColor = require("SearchColor")
 ClickSuit = require("ClickSuit")
 FindFont = require("FindFont")
+UI = require("UI")
 MoveTo = {}
 
 local finish = false
@@ -117,6 +118,7 @@ local function GoToAnHei(index)
         mSleep(5000)
         local x,y = FindFont.findFont("325,344")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(627,241) -- 点击黑暗魔窟地图
     Tools.click(266,181) -- 进入黑暗魔窟地图
     
@@ -144,7 +146,7 @@ local function GoToQiuMoLianYu(index)
         mSleep(5000)
         local x,y = FindFont.findFont("322,332")
     until( x ~= -1 )
-    
+    mSleep(5000)
     Tools.click(573,370) -- 点击囚魔炼狱地图
     Tools.click(414,180) -- 进入囚魔炼狱地图
     repeat
@@ -161,6 +163,7 @@ local function GoToDiXiaCheng(index)
         mSleep(5000)
         local x,y = FindFont.findFont("322,337")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(573,335) -- 点击迷失地下地图
     Tools.click(414,180) -- 进入迷失地下地图
     repeat
@@ -178,6 +181,7 @@ local function GoToHuangQuanZhiLu(index)
         mSleep(5000)
         local x,y = FindFont.findFont("322,325")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(572,505) -- 点击黄泉之路地图
     Tools.click(337,180) -- 进入黄泉之路地图
     repeat
@@ -194,6 +198,7 @@ local function GoToXueLongChaoXue(index)
         mSleep(5000)
         local x,y = FindFont.findFont("322,325")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(572,318) -- 点击血龙巢穴地图
     Tools.click(414,180)  -- 进入血龙巢穴地图
     repeat
@@ -211,6 +216,7 @@ local function GoToShenMiXiaGu(index)
         mSleep(5000)
         local x,y = FindFont.findFont("322,325")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(572,140) -- 点击神秘峡谷地图
     Tools.click(414,180) -- 进入神秘峡谷地图
     repeat
@@ -227,6 +233,7 @@ local function GoToTianDiZhiYu(index)
         mSleep(5000)
         local x,y = FindFont.findFont("313,339")
     until( x ~= -1 )
+    mSleep(5000)
     
     Tools.click(840,458) -- 点击天地之域地图
     if index==1 then
@@ -252,6 +259,7 @@ local function GoToHaiWaiXianGong(index)
         mSleep(5000)
         local x,y = FindFont.findFont("313,339")
     until( x ~= -1 )
+    mSleep(5000)
     
     Tools.click(574,458) -- 点击海外仙宫地图
     Tools.click(414,180)  -- 进入海外仙宫地图
@@ -271,6 +279,7 @@ local function GoToShiWaiTaoYuan(index)
         mSleep(5000)
         local x,y = FindFont.findFont("310,339")
     until( x ~= -1 )
+    mSleep(5000)
     
     Tools.click(520,458) -- 点击世外桃源地图
     Tools.click(414,180)  -- 进入世外桃源地图
@@ -297,6 +306,7 @@ local function GoToQiYuanBingCheng(index)
         mSleep(5000)
         local x,y = FindFont.findFont("221,76")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(977,335) -- 点击起源冰城地图
     Tools.click(837,505)  --进入起源冰城地图
     repeat
@@ -313,6 +323,7 @@ local function GoToJiuShiJie(index)
         mSleep(5000)
         local x,y = FindFont.findFont("204,85")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(435,470) -- 点击旧世界地图
     Tools.click(837,505) --进入旧世界地图
     repeat
@@ -328,6 +339,7 @@ local function GoToXinShiJie(index)
         mSleep(5000)
         local x,y = FindFont.findFont("204,85")
     until( x ~= -1 )
+    mSleep(5000)
     
     Tools.click(710,470) -- 点击新世界地图
     Tools.click(837,505) --进入新世界地图
@@ -344,6 +356,7 @@ local function GoToJingDian(index)
         mSleep(5000)
         local x,y = FindFont.findFont("217,85")
     until( x ~= -1 )
+    mSleep(5000)
      Tools.click(500,460) -- 点击经典之路地图
     Tools.click(837,505) --进入经典之路地图
     repeat
@@ -359,6 +372,7 @@ local function GoToQiYuanGongDian(index)
         mSleep(5000)
         local x,y = FindFont.findFont("217,85")
     until( x ~= -1 )
+    mSleep(5000)
      Tools.click(840,460) -- 点击起源宫殿地图
     Tools.click(358,184) --进入起源宫殿地图
     repeat
@@ -374,6 +388,7 @@ local function GoToHeiAnZhiSen(index)
         mSleep(5000)
         local x,y = FindFont.findFont("229,82")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(505,359) -- 点击黑暗之森地图
     Tools.click(837,505) --进入黑暗之森地图
     repeat
@@ -389,6 +404,7 @@ local function GoToShangGuZhiDi(index)
         mSleep(5000)
         local x,y = FindFont.findFont("231,82")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(970,255) -- 点击上古之地地图
     Tools.click(837,505) --进入上古之地地图
     repeat
@@ -404,6 +420,7 @@ local function GoToHuoLong(index)
         mSleep(5000)
         local x,y = FindFont.findFont("202,72")
     until( x ~= -1 )
+    mSleep(5000)
     Tools.click(575,470) -- 点击火魔龙窟地图
     Tools.click(837,505) --进入火魔龙窟地图
     repeat
@@ -413,7 +430,10 @@ local function GoToHuoLong(index)
 end
 
 function MoveTo.moveTo(name)
-        
+    local x,y = FindFont.findFont(UI.SelectMap())
+    if x~= -1 then 
+        return true    
+    end
     if name == "孤独之地1" then
         --前往冰雪之城
         GoToBingxue()

@@ -38,6 +38,9 @@ function SearchColorHSZ.search(id)
     elseif id == "JingYan" then return  findMultiColorInRegionFuzzy(0x874321, "3|4|0x56a94b,12|0|0x112222,16|7|0x9f8f76", 90, 0, 0, 1280, 720, { orient = 1 })
     --元宝2
     elseif id == "YuanBao2" then return  findMultiColorInRegionFuzzy(0xcdccbf, "5|1|0xd1ab16,15|5|0x713e1c,7|15|0xf1d969", 90, 0, 0, 1280, 720, { orient = 1 })
+    --自动
+    elseif id == "ZiDong" then return findMultiColorInRegionFuzzy(0xf7e6b3, "3|1|0xecdba8,7|4|0xeddb99,0|19|0xbe9c58", 90, 576, 459, 889, 574, { orient = 2 })
+    
     end
     
     

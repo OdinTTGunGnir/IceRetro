@@ -37,6 +37,7 @@ local function yuanbaoANDjingyan()
         if x1 ~= -1 then 
             Tools.click(x1,y1,2)
         end
+
     until(( x == -1 ) and  ( x1 == -1 ) and  ( x2 == -1 ))
 end
 
