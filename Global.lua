@@ -17,6 +17,7 @@ local huichengflag = true
 
 
 function Global.Begin()
+   
     ::BeginGame::
     --进入游戏游戏
     repeat
@@ -63,7 +64,7 @@ function Global.Begin()
         
         local x3,y3 = SearchColor.search("ZiDong")
         if x3 == -1 then
-           goto Auto
+            goto Auto
         end
         
         Fight.CheckBag()
@@ -72,6 +73,8 @@ function Global.Begin()
         mSleep(30 * 1000)
 
     end
+    
+    
     
     
 end

@@ -30,7 +30,7 @@ local function yuanbaoANDjingyan()
             Tools.click(x,y,2)
         end
         local x2,y2  = SearchColor.search("YuanBao2")
-        if x ~= -1 then 
+        if x2 ~= -1 then 
             Tools.click(x2,y2,2)
         end
         local x1,y1  = SearchColor.search("JingYan")

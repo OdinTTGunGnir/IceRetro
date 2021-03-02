@@ -10,7 +10,7 @@ local finish = false
 local process = {}
 
 
-local function ClickMap()
+function ClickMap()
     Tools.click(1160,80)
 end
 function CloseMap()
@@ -77,38 +77,104 @@ local function GoToBingxue()
 end    
 local function GpToGudu(index)
     --打开地图
-        ClickMap()
-        mSleep(2000)
-        --前往孤独之地附近
-        Tools.click(766,268) 
-        mSleep(2000)
-        --关闭地图
-        CloseMap()
-        --循环查找孤独之地
-        local guduflag = false
-        while (guduflag ~= true) do
-            local x,y = SearchColor.search("gudu")
-            if x ~= -1 then
-                Tools.click(x,y)
-                guduflag = true
-            end
+    ClickMap()
+    mSleep(2000)
+    --前往孤独之地附近
+    Tools.click(766,268) 
+    mSleep(2000)
+    --关闭地图
+    CloseMap()
+    --循环查找孤独之地
+    local guduflag = false
+    while (guduflag ~= true) do
+        local x,y = SearchColor.search("gudu")
+        if x ~= -1 then
+            Tools.click(x,y)
+            guduflag = true
         end
-        mSleep(1000)
-        --选择孤独
-        if index==1 then
-            Tools.click(310,152) 
-        elseif index==2 then
-            Tools.click(310,208)
-        elseif index==3 then
-            Tools.click(310,260) 
-        elseif index==4 then
-            Tools.click(310,316) 
-        end
-        mSleep(1000)
-        --前往孤独
-        Tools.click(920,500) 
-        mSleep(5000)
+    end
+    mSleep(1000)
+    --选择孤独
+    if index==1 then
+        Tools.click(310,152) 
+    elseif index==2 then
+        Tools.click(310,208)
+    elseif index==3 then
+        Tools.click(310,260) 
+    elseif index==4 then
+        Tools.click(310,316) 
+    end
+    mSleep(1000)
+    --前往孤独
+    Tools.click(920,500) 
+    mSleep(5000)
 end
+local function AnHei2()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(564,366)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(8000)
+    repeat
+        mSleep(8000)
+        local x,y = FindFont.findFont("135,165")
+    until( x ~= -1 )
+    ClickMap()
+    mSleep(1000)
+    Tools.click(577,351)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("黑暗魔窟二层")
+    until( x ~= -1 )
+end    
+local function AnHei3()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(414,194)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(8000)
+    repeat
+        mSleep(8000)
+        local x,y = FindFont.findFont("50,30")
+    until( x ~= -1 )
+    ClickMap()
+    mSleep(1000)
+    Tools.click(399,157)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("黑暗魔窟三层")
+    until( x ~= -1 )
+end   
+local function AnHei4()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(343,457)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(8000)
+    repeat
+        mSleep(8000)
+        local x,y = FindFont.findFont("29,144")
+    until( x ~= -1 )
+    ClickMap()
+    mSleep(1000)
+    Tools.click(315,492)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("黑暗魔窟四层")
+    until( x ~= -1 )
+end    
 local function GoToAnHei(index)
     ClickSuit.huicheng()
     GoToMapInit()
@@ -129,11 +195,14 @@ local function GoToAnHei(index)
     
     if index==1 then
     elseif index==2 then
-        ClickMap()
-        mSleep(1000)
-        Tools.click(577,351)
+        AnHei2()
     elseif index==3 then
+        AnHei2()
+        AnHei3()
     elseif index==4 then
+        AnHei2()
+        AnHei3()
+        AnHei4()
     end
     
 end
@@ -189,6 +258,74 @@ local function GoToHuangQuanZhiLu(index)
         local x,y = FindFont.findFont("黄泉之路一层")
     until( x ~= -1 )
 end
+
+local function XueLong2()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(404,220)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(8000)
+    repeat
+        mSleep(8000)
+        local x,y = FindFont.findFont("23,20")
+    until( x ~= -1 )
+    ClickMap()
+    mSleep(1000)
+    Tools.click(368,194)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("血龙大厅")
+    until( x ~= -1 )
+end   
+local function XueLong3()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(416,247)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(20000)
+    -- repeat
+    --     mSleep(8000)
+    --     local x,y = FindFont.findFont("25,26")
+    -- until( x ~= -1 )
+    ClickMap()
+    mSleep(1000)
+    Tools.click(389,219)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("血龙阁")
+    until( x ~= -1 )
+end 
+local function XueLong4()
+    ClickMap()
+    mSleep(1000)
+    Tools.click(406,222)
+    mSleep(500)
+    ClickSuit.CloseBtn()
+    mSleep(20000)
+    -- repeat
+    --     mSleep(8000)
+    --     local x,y = FindFont.findFont("25,26")
+    -- until( x ~= -1 )
+    -- ClickMap()
+    -- mSleep(1000)
+    -- Tools.click(368,194)
+    -- mSleep(500)
+    -- ClickSuit.CloseBtn()
+        
+    repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("血龙殿")
+    until( x ~= -1 )
+end 
+
 local function GoToXueLongChaoXue(index)
     ClickSuit.huicheng()
     GoToMapInit()
@@ -205,6 +342,18 @@ local function GoToXueLongChaoXue(index)
         mSleep(3000)
         local x,y = FindFont.findFont("血龙回廊")
     until( x ~= -1 )
+    
+    if index==1 then
+    elseif index==2 then
+        XueLong2()
+    elseif index==3 then
+        XueLong2()
+        XueLong3()
+    elseif index==4 then
+        XueLong2()
+        XueLong3()
+        XueLong4()
+    end
     
 end
 local function GoToShenMiXiaGu(index)
@@ -265,9 +414,28 @@ local function GoToHaiWaiXianGong(index)
     Tools.click(414,180)  -- 进入海外仙宫地图
     
     repeat
+        mSleep(3000)
+        local x,y = FindFont.findFont("海外仙宫")
+    until( x ~= -1 )
+    
+    if index ==1 then
+        
+    else
+        ClickMap()
+        mSleep(1000)
+        Tools.click(456,273)
+        mSleep(500)
+        ClickSuit.CloseBtn()
+        mSleep(10000)
+        Tools.click(723,323)
+        mSleep(1000)
+        Tools.click(248,149)
+        repeat
             mSleep(3000)
-            local x,y = FindFont.findFont("海外仙宫")
+            local x,y = FindFont.findFont("广寒宫")
         until( x ~= -1 )
+    end
+    
     
 end
 local function GoToShiWaiTaoYuan(index)
@@ -357,7 +525,7 @@ local function GoToJingDian(index)
         local x,y = FindFont.findFont("217,85")
     until( x ~= -1 )
     mSleep(5000)
-     Tools.click(500,460) -- 点击经典之路地图
+    Tools.click(500,460) -- 点击经典之路地图
     Tools.click(837,505) --进入经典之路地图
     repeat
         mSleep(5000)
@@ -373,7 +541,7 @@ local function GoToQiYuanGongDian(index)
         local x,y = FindFont.findFont("217,85")
     until( x ~= -1 )
     mSleep(5000)
-     Tools.click(840,460) -- 点击起源宫殿地图
+    Tools.click(840,460) -- 点击起源宫殿地图
     Tools.click(358,184) --进入起源宫殿地图
     repeat
         mSleep(5000)
@@ -430,7 +598,13 @@ local function GoToHuoLong(index)
 end
 
 function MoveTo.moveTo(name)
-    local x,y = FindFont.findFont(UI.SelectMap())
+    local a = UI.SelectMap()
+    if a=="血龙巢穴1" then a = "血龙回廊"
+    elseif a=="血龙巢穴2" then a = "血龙大厅"
+    elseif a=="血龙巢穴3" then a = "血龙阁"
+    elseif a=="血龙巢穴4" then a = "血龙殿"
+    end
+    local x,y = FindFont.findFont(a)
     if x~= -1 then 
         return true    
     end
@@ -455,8 +629,17 @@ function MoveTo.moveTo(name)
         --前往孤独之地
         GpToGudu(4)
     elseif name == "黑暗魔窟一层" then
-        --前往暗黑魔窟
+        --前往暗黑魔窟1
         GoToAnHei(1)
+    elseif name == "黑暗魔窟二层" then
+        --前往暗黑魔窟2
+        GoToAnHei(2)
+    elseif name == "黑暗魔窟三层" then
+        --前往暗黑魔窟3
+        GoToAnHei(3)
+    elseif name == "黑暗魔窟四层" then
+        --前往暗黑魔窟4
+        GoToAnHei(4)
     elseif name == "地之域" then
         --前往地之狱
         GoToTianDiZhiYu(-1)
@@ -505,10 +688,10 @@ function MoveTo.moveTo(name)
     elseif name == "黄泉之路3" then
         --前往黄泉之路3
         GoToHuangQuanZhiLu(3)
-    elseif name == "海外仙岛1" then
+    elseif name == "海外仙岛" then
         --前往海外仙岛1
         GoToHaiWaiXianGong(1)
-    elseif name == "海外仙岛2" then
+    elseif name == "广寒宫" then
         --前往海外仙岛2
         GoToHaiWaiXianGong(2)
     elseif name == "神秘峡谷1" then

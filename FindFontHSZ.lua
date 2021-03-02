@@ -37,8 +37,26 @@ function FindFontHSZ.findFont(id)
     elseif id == "上古之地一层" then return tsFindText(index, "上古之地一层",1092, 3, 1274, 30, "F1E8DD , 545250", 90)    
     elseif id == "202,72" then return tsFindText(index, "202,72",1170,131,1276,169, "F1E8DD , 545250", 90)
     elseif id == "202,72" then return tsFindText(index, "火龙魔窟一层",1092, 3, 1274, 30, "F1E8DD , 545250", 90)
-        
-    elseif id == "154,162" then return tsFindText(index, "154,162",1170,131,1276,169, "CEC5B9 , 171614", 90)
+   
+    --暗黑魔窟1层到2层
+    elseif id == "135,165" then return tsFindText(index, "135,165", 1165,131,1276,169, "C3BBB0 , 232220", 90)
+    elseif id == "黑暗魔窟二层" then return tsFindText(index, "黑暗魔窟二层", 1092, 3, 1274, 30, "C3BBB0 , 232220", 90)
+     --暗黑魔窟2层到3层
+    elseif id == "50,30" then return tsFindText(index, "50,30", 1165,131,1276,169, "C3BBB0 , 232220", 90)
+    elseif id == "黑暗魔窟三层" then return tsFindText(index, "黑暗魔窟三层", 1092, 3, 1274, 30, "D1C8BC , 171615", 90)
+     --暗黑魔窟3层到4层
+    elseif id == "29,144" then return tsFindText(index, "29,144", 1165,131,1276,169, "D1C8BC , 161514", 90)
+    elseif id == "黑暗魔窟四层" then return tsFindText(index, "黑暗魔窟四层", 1092, 3, 1274, 30, "020000 , 020101", 90)
+     --血龙1层到2层
+    elseif id == "23,20" then return tsFindText(index, "23,20",1165,131,1276,169, "B4ACA2 , 242321", 90)
+    elseif id == "血龙大厅" then return tsFindText(index, "血龙大厅", 1092, 3, 1274, 30, "D1C8BC , 151413", 90)
+     --血龙2层到3层
+    elseif id == "25,26" then return tsFindText(index, "25,26",1165,131,1276,169, "C3BBB1 , 1E1D1C", 90)--没找到
+    elseif id == "血龙阁" then return tsFindText(index, "血龙阁",1092, 3, 1274, 30, "C6BDB3 , 2D2B29", 90)
+    --血龙3层到4层    
+    elseif id == "血龙殿" then return  tsFindText(index, "血龙殿",1092, 3, 1274, 30, "C6BDB3 , 2D2B29", 90)
+    --广寒宫    
+    elseif id == "广寒宫" then return  tsFindText(index, "广寒宫",1092, 3, 1274, 30, "CDC4B9 , 1A1918", 90)
     end 
     Debug.log("找字ID未定义")
     return -1,-1
