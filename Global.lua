@@ -24,7 +24,17 @@ function Global.Begin()
         Finish = Global.OpenGame.openGame(Global.Device)--根据手机型号,进入游戏 hsz（红手指） 6（iphone6）
     until( Finish )
     Debug.Log("进入游戏成功")
-
+    local BTime,MTime,index
+    if UI.BeiBao_TIME()=="" then
+        BTime= 30
+    end
+    if UI.GuaJiShiJian()=="" then
+        MTime= 1
+    end
+    index = 1/(MTime*60)
+    MapIndex_Furture = 1
+    MapIndex_Current = 1
+    
     mSleep(5000)
     -- -- 开始游戏配置
     -- repeat
@@ -48,6 +58,7 @@ function Global.Begin()
     
     
     mSleep(10000)
+    
     --循环清理背包
     while (true) do
         
@@ -57,7 +68,7 @@ function Global.Begin()
         if x == -1 then
             goto BeginGame
         end
-        local x,y = FindFont.findFont(UI.SelectMap())
+        local x,y = FindFont.findFont(UI.SelectMap()[MapIndex_Current])
         if x == -1 then
             goto MoveToMap
         end
@@ -68,9 +79,23 @@ function Global.Begin()
         end
         
         Fight.CheckBag()
-
+        
+        MapIndex_Furture  = MapIndex_Furture + (index*BTime)
+        nLog("MapIndex_Current"..MapIndex_Current)
+        nLog("MapIndex_Furture"..MapIndex_Furture)
+        if (MapIndex_Furture - MapIndex_Current)>=1 then
+            MapIndex_Current = MapIndex_Furture
+            if(MapIndex_Furture ==UI.MapCount()) then
+                MapIndex_Furture = 1
+                MapIndex_Current = 1
+            end
+            goto MoveToMap
+        end
+        if MapIndex_Furture >UI.MapCount()+1 then
+            
+        end
         --mSleep(UI.BeiBao_TIME() * 1000)
-        mSleep(30 * 1000)
+        mSleep(BTime * 1000)
 
     end
     

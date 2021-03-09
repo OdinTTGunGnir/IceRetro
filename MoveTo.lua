@@ -597,167 +597,173 @@ local function GoToHuoLong(index)
     until( x ~= -1 )
 end
 
+-- MapIndex_Current = 1;
+-- MapIndex_Forward = 1;
 function MoveTo.moveTo(name)
-    local a = UI.SelectMap()
+    
+    
+    
+    local a = UI.SelectMap()[MapIndex_Current]
     if a=="血龙巢穴1" then a = "血龙回廊"
     elseif a=="血龙巢穴2" then a = "血龙大厅"
     elseif a=="血龙巢穴3" then a = "血龙阁"
     elseif a=="血龙巢穴4" then a = "血龙殿"
     end
-    local x,y = FindFont.findFont(a)
-    if x~= -1 then 
-        return true    
-    end
-    if name == "孤独之地1" then
+    -- local x,y = FindFont.findFont(a)
+    -- if x~= -1 then 
+    --     return true    
+    -- end
+    local MapName = name[MapIndex_Current]
+    if MapName == "孤独之地1" then
         --前往冰雪之城
         GoToBingxue()
         --前往孤独之地
         GpToGudu(1)
-    elseif name == "孤独之地2" then
+    elseif MapName == "孤独之地2" then
         --前往冰雪之城
         GoToBingxue()
         --前往孤独之地
         GpToGudu(2)
-    elseif name == "孤独之地3" then
+    elseif MapName == "孤独之地3" then
         --前往冰雪之城
         GoToBingxue()
         --前往孤独之地
         GpToGudu(3)
-    elseif name == "孤独之地4" then
+    elseif MapName == "孤独之地4" then
         --前往冰雪之城
         GoToBingxue()
         --前往孤独之地
         GpToGudu(4)
-    elseif name == "黑暗魔窟一层" then
+    elseif MapName == "黑暗魔窟一层" then
         --前往暗黑魔窟1
         GoToAnHei(1)
-    elseif name == "黑暗魔窟二层" then
+    elseif MapName == "黑暗魔窟二层" then
         --前往暗黑魔窟2
         GoToAnHei(2)
-    elseif name == "黑暗魔窟三层" then
+    elseif MapName == "黑暗魔窟三层" then
         --前往暗黑魔窟3
         GoToAnHei(3)
-    elseif name == "黑暗魔窟四层" then
+    elseif MapName == "黑暗魔窟四层" then
         --前往暗黑魔窟4
         GoToAnHei(4)
-    elseif name == "地之域" then
+    elseif MapName == "地之域" then
         --前往地之狱
         GoToTianDiZhiYu(-1)
-    elseif name == "天之域" then
+    elseif MapName == "天之域" then
         --前往天之狱
         GoToTianDiZhiYu(1)
-    elseif name == "世外桃源" then
+    elseif MapName == "世外桃源" then
         --前往世外桃源
         GoToShiWaiTaoYuan(1)
-    elseif name == "血龙巢穴1" then
+    elseif MapName == "血龙巢穴1" then
         --前往血龙巢穴1
         GoToXueLongChaoXue(1)
-    elseif name == "血龙巢穴2" then
+    elseif MapName == "血龙巢穴2" then
         --前往血龙巢穴2
         GoToXueLongChaoXue(2)
-    elseif name == "血龙巢穴3" then
+    elseif MapName == "血龙巢穴3" then
         --前往血龙巢穴3
         GoToXueLongChaoXue(3)
-    elseif name == "血龙巢穴4" then
+    elseif MapName == "血龙巢穴4" then
         --前往血龙巢穴4
         GoToXueLongChaoXue(4)
-    elseif name == "囚魔炼狱1" then
+    elseif MapName == "囚魔炼狱1" then
         --前往囚魔炼狱1
         GoToQiuMoLianYu(1)
-    elseif name == "囚魔炼狱2" then
+    elseif MapName == "囚魔炼狱2" then
         --前往囚魔炼狱2
         GoToQiuMoLianYu(2)
-    elseif name == "迷失地下城1" then
+    elseif MapName == "迷失地下城1" then
         --前往迷失地下城1
         GoToDiXiaCheng(1)
-    elseif name == "迷失地下城2" then
+    elseif MapName == "迷失地下城2" then
         --前往迷失地下城2
         GoToDiXiaCheng(2)
-    elseif name == "迷失地下城3" then
+    elseif MapName == "迷失地下城3" then
         --前往迷失地下城3
         GoToDiXiaCheng(3)
-    elseif name == "迷失地下城4" then
+    elseif MapName == "迷失地下城4" then
         --前往迷失地下城4
         GoToDiXiaCheng(4)
-    elseif name == "黄泉之路1" then
+    elseif MapName == "黄泉之路1" then
         --前往黄泉之路1
         GoToHuangQuanZhiLu(1)
-    elseif name == "黄泉之路2" then
+    elseif MapName == "黄泉之路2" then
         --前往黄泉之路2
         GoToHuangQuanZhiLu(2)
-    elseif name == "黄泉之路3" then
+    elseif MapName == "黄泉之路3" then
         --前往黄泉之路3
         GoToHuangQuanZhiLu(3)
-    elseif name == "海外仙岛" then
+    elseif MapName == "海外仙岛" then
         --前往海外仙岛1
         GoToHaiWaiXianGong(1)
-    elseif name == "广寒宫" then
+    elseif MapName == "广寒宫" then
         --前往海外仙岛2
         GoToHaiWaiXianGong(2)
-    elseif name == "神秘峡谷1" then
+    elseif MapName == "神秘峡谷1" then
         --前往神秘峡谷1
         GoToShenMiXiaGu(1)
-    elseif name == "神秘峡谷2" then
+    elseif MapName == "神秘峡谷2" then
         --前往神秘峡谷2
         GoToShenMiXiaGu(2)
-    elseif name == "神秘峡谷3" then
+    elseif MapName == "神秘峡谷3" then
         --前往神秘峡谷3
         GoToShenMiXiaGu(3)
-    elseif name == "神秘峡谷4" then
+    elseif MapName == "神秘峡谷4" then
         --前往神秘峡谷4
         GoToShenMiXiaGu(4)
-    elseif name == "神秘峡谷5" then
+    elseif MapName == "神秘峡谷5" then
         --前往神秘峡谷5
         GoToShenMiXiaGu(5)
-    elseif name == "神秘峡谷6" then
+    elseif MapName == "神秘峡谷6" then
         --前往神秘峡谷6
         GoToShenMiXiaGu(6)
-    elseif name == "神秘峡谷7" then
+    elseif MapName == "神秘峡谷7" then
         --前往神秘峡谷7
         GoToShenMiXiaGu(7)
-    elseif name == "冰雪之城" then
+    elseif MapName == "冰雪之城" then
         --前往雪之城
         GoToBingxue(1)
-    elseif name == "新世界" then
+    elseif MapName == "新世界" then
         --前往新世界
         GoToXinShiJie(1)
-    elseif name == "旧世界" then
+    elseif MapName == "旧世界" then
         --前往旧世界
         GoToJiuShiJie(1)
-    elseif name == "传奇经典之路" then
+    elseif MapName == "传奇经典之路" then
         --前往传奇经典之路
         GoToJingDian(1)
-    elseif name == "起源宫殿" then
+    elseif MapName == "起源宫殿" then
         --前往起源宫殿
         GoToQiYuanGongDian(1)
-    elseif name == "黑暗之森" then
+    elseif MapName == "黑暗之森" then
         --前往黑暗之森
         GoToHeiAnZhiSen(1)
-    elseif name == "上古之地" then
+    elseif MapName == "上古之地" then
         --前往上古之地
         GoToShangGuZhiDi(1)
-    elseif name == "火龙1" then
+    elseif MapName == "火龙1" then
         --前往火龙1
         GoToHuoLong(1)
-    elseif name == "火龙2" then
+    elseif MapName == "火龙2" then
         --前往火龙2
         GoToHuoLong(2)
-    elseif name == "火龙3" then
+    elseif MapName == "火龙3" then
         --前往火龙3
         GoToHuoLong(3)
-    elseif name == "火龙4" then
+    elseif MapName == "火龙4" then
         --前往火龙4
         GoToHuoLong(4)
-    elseif name == "火龙5" then
+    elseif MapName == "火龙5" then
         --前往火龙5
         GoToHuoLong(5)
-    elseif name == "火龙6" then
+    elseif MapName == "火龙6" then
         --前往火龙6
         GoToHuoLong(6)
-    elseif name == "火龙7" then
+    elseif MapName == "火龙7" then
         --前往火龙7
         GoToHuoLong(7)
-    elseif name == "火龙8" then
+    elseif MapName == "火龙8" then
         --前往火龙8
         GoToHuoLong(8)
     end
