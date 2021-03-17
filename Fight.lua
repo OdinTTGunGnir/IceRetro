@@ -3,6 +3,7 @@ Tools = require("Tools")
 Debug = require("Debug")
 ClickSuit = require("ClickSuit")
 SearchColor = require("SearchColor")
+UI = require("UI")
 
 function OpenBag()
     mSleep(1000)
@@ -22,7 +23,7 @@ function HuiShou()
     mSleep(500)
 end
 local function yuanbaoANDjingyan()
-
+    --元宝
     repeat
         mSleep(700)
         local x,y  = SearchColor.search("YuanBao")
@@ -33,12 +34,26 @@ local function yuanbaoANDjingyan()
         if x2 ~= -1 then 
             Tools.click(x2,y2,2)
         end
-        local x1,y1  = SearchColor.search("JingYan")
-        if x1 ~= -1 then 
-            Tools.click(x1,y1,2)
+    until(( x == -1 ) and  ( x2 == -1 ))
+    --经验
+    repeat 
+        local x1,y1
+        if UI.JinYanCheck() then
+            x1,y1  = SearchColor.search("JingYan")
+            if x1 ~= -1 then 
+                Tools.click(x1,y1,2)
+            end
+        else   
+            Tools.click(1243,102)
+            mSleep(400)
+            Tools.click(814,480)
+            mSleep(500)
+            x1,y1  = SearchColor.search("JingYan")
+             if x1 ~= -1 then 
+                Tools.click(x1,y1,2)
+            end
         end
-
-    until(( x == -1 ) and  ( x1 == -1 ) and  ( x2 == -1 ))
+    until( x1 == -1)    
 end
 
 function Fight.CheckBag()

@@ -597,8 +597,8 @@ local function GoToHuoLong(index)
     until( x ~= -1 )
 end
 
--- MapIndex_Current = 1;
--- MapIndex_Forward = 1;
+MapIndex_Current = 1;
+MapIndex_Forward = 1;
 function MoveTo.moveTo(name)
     
     

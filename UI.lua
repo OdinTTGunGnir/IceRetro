@@ -19,7 +19,7 @@ function UI.ShowUI()
     w,h = getScreenSize()
     UINew(5,"设置,土城,二/三大陆,喊话,其他","运行脚本","退出脚本","uiconfig.dat",1,120,900,600,"250,235,215","255,235,205","","tab",1,12,"left")
     UILabel(1,"---------------------功能设置---------------------",15,"center","34,139,34")
-    UICombo(1,"Select_Main","挂机模式,喊话模式,合成模式","0")
+    -- UICombo(1,"Select_Main","挂机模式,喊话模式,合成模式","0")
     
     UILabel(1,"---------------------基本设置---------------------",15,"center","34,139,34")
     UICheck(1,"Select_ChongLian","自动重新连接游戏","0")
@@ -31,13 +31,15 @@ function UI.ShowUI()
     UICheck(1,"Select_Huishou","定时回收","0",240,1,"",1,1)
     UIEdit(1,"Tex_HuiShou","30","30",15,"left","255,0,0","number",100,1)
     UILabel(1,"秒分解一次",17,"left","0,0,0",200,0)
-    UICheck(1,"Check1,Check2,Check3","经验是否使用（勾选使用，不勾选存储）,存储功能（斗笠、护盾）,存储功能（治疗宝珠）","0")
+    UICheck(1,"CheckJY","经验是否使用","0")
+    -- UICheck(1,"CheckDD","存储功能（斗笠、护盾）","0")
+    -- UICheck(1,"CheckBZ","存储功能（治疗宝珠）","0")
     
     UILabel(1,"---------------------其他设置---------------------",15,"center","34,139,34")
-    UICheck(1,"Check4","补充回城石","0")
+    UICheck(1,"BuyHuichengCheck","补充回城石","0")
     
-    UILabel(1,"---------------------挂机设置---------------------",15,"center","34,139,34")
-    UICheck(1,"Check5,Check6,Check7","见人就杀,被打反击,每个地图挂机30分钟切换地图","0")
+    -- UILabel(1,"---------------------挂机设置---------------------",15,"center","34,139,34")
+    -- UICheck(1,"Check5,Check6,Check7","见人就杀,被打反击,每个地图挂机30分钟切换地图","0")
     
     UILabel(2,"---------------------基本地图---------------------",15,"center","34,139,34")
     UICheck(2,"Check8,Check9,Check10,Check11","黑暗魔窟一层,黑暗魔窟二层,黑暗魔窟三层,黑暗魔窟四层","0",-1,0,"",1,2)
@@ -48,20 +50,20 @@ function UI.ShowUI()
     
     UILabel(4,"---------------------喊话设置---------------------",15,"center","34,139,34")
     
-    UILabel(4,"喊话间隔",18,"left","38,38,38",200,1)
-    UIEdit(4,"Tex_HHJG","内容","",15,"left","38,38,38","default",200,0)
-    UILabel(4,"喊话次数",18,"left","38,38,38",200,1)
-    UIEdit(4,"Tex_HHCS","内容","",15,"left","38,38,38","default",200,0)
-    UILabel(4,"喊话内容",18,"left","38,38,38",200,1)
-    UIEdit(4,"Tex_HHNR","内容","",15,"left","38,38,38","default",500,0)
+    -- UILabel(4,"喊话间隔",18,"left","38,38,38",200,1)
+    -- UIEdit(4,"Tex_HHJG","内容","",15,"left","38,38,38","default",200,0)
+    -- UILabel(4,"喊话次数",18,"left","38,38,38",200,1)
+    -- UIEdit(4,"Tex_HHCS","内容","",15,"left","38,38,38","default",200,0)
+    -- UILabel(4,"喊话内容",18,"left","38,38,38",200,1)
+    -- UIEdit(4,"Tex_HHNR","内容","",15,"left","38,38,38","default",500,0)
 
     UILabel(5,"---------------------合成---------------------",15,"center","34,139,34")
-    UIRadio(5,"HeCheng_Select","斗笠,盾牌,宝珠","0",-1,0,"",1,3)
+    -- UIRadio(5,"HeCheng_Select","斗笠,盾牌,宝珠","0",-1,0,"",1,3)
     UILabel(5,"---------------------神魔模式---------------------",15,"center","34,139,34")
-    UICheck(5,"Check41","是否开启点击神魔","0")
-    UICombo(5,"Select_ShenMo","嗜血,穿杨,强化,精准,强身","0")
-    UILabel(5,"点击次数",18,"left","38,38,38",200,1)
-    UIEdit(5,"Tex_SMCS","次数","3",15,"left","38,38,38","number")
+    -- UICheck(5,"Check41","是否开启点击神魔","0")
+    -- UICombo(5,"Select_ShenMo","嗜血,穿杨,强化,精准,强身","0")
+    -- UILabel(5,"点击次数",18,"left","38,38,38",200,1)
+    -- UIEdit(5,"Tex_SMCS","次数","3",15,"left","38,38,38","number")
     
     
     -- UIComboRlt("name1,name2","选项1,选项2,选项3","子选项1,子选项2,子选项3,子选项4#子选项5,子选项6,子选项7#子选项8,子选项9","test")
@@ -200,8 +202,24 @@ end
 function UI.MapCount()
     return #Array_Map
 end
+function UI.GuaJiCheck()
+   return Select_GuaJi; 
+end    
+function UI.JinYanCheck()
+    local IsJy = false
+    if CheckJY =="经验是否使用" then
+        IsJy = true
+    end
+   return IsJy; 
+end    
 
-
+function UI.BuyHuichengCheck()
+    local BuyHuicheng = false
+    if BuyHuichengCheck =="补充回城石" then
+        BuyHuicheng = true
+    end
+   return BuyHuicheng; 
+end    
 return UI
 
 

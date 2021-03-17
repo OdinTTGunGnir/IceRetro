@@ -5,7 +5,8 @@ init(1)
 
 UI.ShowUI()
 
-Global.Begin()
+--Global.Begin()
+
 
 -- local x ,y = SearchColor.search("YuanBao2")
        

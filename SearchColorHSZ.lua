@@ -23,7 +23,8 @@ function SearchColorHSZ.search(id)
     --孤独之地
     elseif id == "gudu" then return findMultiColorInRegionFuzzy(0x24a10d, "7|1|0x32a921,12|1|0x219811", 90, 550, 498, 573, 520, { orient = 2 })
     --回城
-    elseif id == "huicheng" then return findMultiColorInRegionFuzzy(0x420d42, "7|5|0x771177,15|1|0xd211c1,22|3|0x756d6d,14|-8|0xefefe6", 90, 514, 554, 895, 632, { orient = 1 })
+    elseif id == "huicheng" then return    findMultiColorInRegionFuzzy(0x9f4ca2, "-3|7|0x541a69,2|10|0x7a147a,13|4|0x90907f", 90, 524, 561, 883, 624, { orient = 2 })
+    --elseif id == "huicheng" then return findMultiColorInRegionFuzzy(0x420d42, "7|5|0x771177,15|1|0xd211c1,22|3|0x756d6d,14|-8|0xefefe6", 90, 514, 554, 895, 632, { orient = 1 })
     --地图是否白屏
     elseif id == "baiping" then return findMultiColorInRegionFuzzy(0x3d4416, "-32|15|0x57682a,10|30|0x3d4614,46|20|0x4f4f1d,47|-7|0x445223,328|134|0x786544", 90, 257, 197, 877, 556, { orient = 2 })
     --是否包满
@@ -40,7 +41,9 @@ function SearchColorHSZ.search(id)
     elseif id == "YuanBao2" then return  findMultiColorInRegionFuzzy(0xcdccbf, "5|1|0xd1ab16,15|5|0x713e1c,7|15|0xf1d969", 90, 0, 0, 1280, 720, { orient = 1 })
     --自动
     elseif id == "ZiDong" then return findMultiColorInRegionFuzzy(0xf7e6b3, "3|1|0xecdba8,7|4|0xeddb99,0|19|0xbe9c58", 90, 576, 459, 889, 574, { orient = 2 })
-    
+    --妖兽
+    elseif id == "YaoShou" then return findMultiColorInRegionFuzzy(0x03c0b5, "1|0|0x039e95,6|-3|0x026f69", 90, 0, 0, 1280, 720, { orient = 2 })
+
     end
     
     

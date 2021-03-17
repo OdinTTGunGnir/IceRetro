@@ -24,12 +24,15 @@ function Global.Begin()
         Finish = Global.OpenGame.openGame(Global.Device)--根据手机型号,进入游戏 hsz（红手指） 6（iphone6）
     until( Finish )
     Debug.Log("进入游戏成功")
+    --定义变量和计算比例
     local BTime,MTime,index
+    BTime= 30
+    MTime= 30
     if UI.BeiBao_TIME()=="" then
         BTime= 30
     end
     if UI.GuaJiShiJian()=="" then
-        MTime= 1
+        MTime= 30
     end
     index = 1/(MTime*60)
     MapIndex_Furture = 1
@@ -77,24 +80,44 @@ function Global.Begin()
         if x3 == -1 then
             goto Auto
         end
-        
+        --清理背包
         Fight.CheckBag()
-        
-        MapIndex_Furture  = MapIndex_Furture + (index*BTime)
-        nLog("MapIndex_Current"..MapIndex_Current)
-        nLog("MapIndex_Furture"..MapIndex_Furture)
-        if (MapIndex_Furture - MapIndex_Current)>=1 then
-            MapIndex_Current = MapIndex_Furture
-            if(MapIndex_Furture ==UI.MapCount()) then
-                MapIndex_Furture = 1
-                MapIndex_Current = 1
-            end
-            goto MoveToMap
-        end
-        if MapIndex_Furture >UI.MapCount()+1 then
+        --是否切换地图
+        if UI.GuaJiCheck()=="挂机" then 
+            if UI.MapCount()>=2 then
+                MapIndex_Furture  = MapIndex_Furture + (index*BTime)
+                if (MapIndex_Furture - MapIndex_Current)>=1 then
+                    MapIndex_Current = MapIndex_Furture
+                    if(MapIndex_Furture ==UI.MapCount()) then
+                        MapIndex_Furture = 1
+                        MapIndex_Current = 1
+                    end
+                    goto MoveToMap
+                end
+                if MapIndex_Furture >UI.MapCount()+1 then
             
+                end
+            end
         end
         --mSleep(UI.BeiBao_TIME() * 1000)
+        --检查回城石
+        if UI.BuyHuichengCheck() then
+            local x,y = SearchColor.search("huicheng")
+            if x ~= -1 then
+                
+            else    
+                mSleep(300)
+                Tools.click(911,672)
+                mSleep(500)
+                Tools.click(507,131)
+                mSleep(600)
+                Tools.click(994,490)
+                mSleep(700)
+                Tools.click(440,424)
+                mSleep(800)
+                ClickSuit.CloseBtn()
+            end
+        end    
         mSleep(BTime * 1000)
 
     end
