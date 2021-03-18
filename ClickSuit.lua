@@ -15,6 +15,16 @@ function ClickSuit.huicheng()
                 huichengflag = false
             else    
                 Debug.Log("没找到回城")
+                mSleep(300)
+                Tools.click(911,672)
+                mSleep(500)
+                Tools.click(507,131)
+                mSleep(600)
+                Tools.click(994,490)
+                mSleep(700)
+                Tools.click(742,424)
+                mSleep(800)
+                ClickSuit.CloseBtn()
             end
             
         end

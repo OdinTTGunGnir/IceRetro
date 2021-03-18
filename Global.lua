@@ -35,8 +35,7 @@ function Global.Begin()
         MTime= 30
     end
     index = 1/(MTime*60)
-    MapIndex_Furture = 1
-    MapIndex_Current = 1
+    
     
     mSleep(5000)
     -- -- 开始游戏配置
@@ -49,11 +48,13 @@ function Global.Begin()
     
     ::MoveToMap::
     repeat
+        nLog("前往地图")
         Finish = MoveTo.moveTo(UI.SelectMap())
         --  Finish = MoveTo.moveTo("天空之城（地）")
     until( Finish )
     --Debug.Log("移动成功，移动至："+UI.SelectMap())
- 
+    MapIndex_Furture = 1
+    MapIndex_Current = 1
     mSleep(5000)
     ::Auto::
     --打开自动
@@ -66,12 +67,14 @@ function Global.Begin()
     while (true) do
         
         ClickSuit.CloseBtn()
-        
+        nLog("循环")
         local x ,y = SearchColor.search("Btn_Player")
         if x == -1 then
             goto BeginGame
         end
         local x,y = FindFont.findFont(UI.SelectMap()[MapIndex_Current])
+        nLog(x)
+        nLog(UI.SelectMap()[MapIndex_Current])
         if x == -1 then
             goto MoveToMap
         end

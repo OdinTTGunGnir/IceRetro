@@ -3,17 +3,22 @@ ColorTable = {}
 
 function SearchColorHSZ.search(id)
     --打开游戏（游戏icon）
-    if id == "OpenGame" then return findMultiColorInRegionFuzzy(0x519bca, "29|6|0x002795,52|4|0xbd0908,10|49|0xffe05f,52|47|0xeb6819", 90, 0, 0, 720, 1280, { orient = 2 })
+    -- if id == "OpenGame" then return findMultiColorInRegionFuzzy(0x519bca, "29|6|0x002795,52|4|0xbd0908,10|49|0xffe05f,52|47|0xeb6819", 90, 0, 0, 720, 1280, { orient = 2 })
+    --if id == "OpenGame" then return findMultiColorInRegionFuzzy(0x003196, "0|-6|0xffffff,-4|-22|0x00c3ff,-4|-31|0x00c8ff,-8|-47|0x008dff", 90, 0, 0, 720, 1280, { orient = 2 })
+    if id == "OpenGame" then return findMultiColorInRegionFuzzy(0x017fd5, "11|-4|0xf7feff,9|3|0x9eeeff,9|6|0xdaf8ff", 90, 0, 0, 720, 1280, { orient = 2 })
+
     --关闭开服公告
     elseif id == "CloseNotice" then return findMultiColorInRegionFuzzy(0x8e0606, "8|3|0xe8d782,14|7|0x8b0303", 90, 0, 0, 1280, 720, { orient = 1 })
     --登陆账号
     elseif id == "Login" then return findMultiColorInRegionFuzzy(0xd19edf, "17|1|0xd19edf,43|1|0xffffff,102|4|0xffffff,149|2|0xd19edf", 90, 679, 479, 956, 629, { orient = 2 })
-    --登陆账号2
-    elseif id == "StartGame" then return findMultiColorInRegionFuzzy(0x6f6f67, "19|0|0xffe26b,28|0|0xffe069,53|5|0xeecc66,80|5|0xf3d15a,107|8|0xecca64", 90, 0, 0, 1280, 720, { orient = 1 })
+    --开始游戏
+    elseif id == "StartGame" then return findMultiColorInRegionFuzzy(0x876823, "27|4|0xfdf6d4,60|4|0xf7f7c4,76|4|0xfeedba", 90, 0, 0, 1280, 720, { orient = 2 })
+    --elseif id == "StartGame" then return findMultiColorInRegionFuzzy(0x6f6f67, "19|0|0xffe26b,28|0|0xffe069,53|5|0xeecc66,80|5|0xf3d15a,107|8|0xecca64", 90, 0, 0, 1280, 720, { orient = 1 })
     --选择角色
     elseif id == "SelectPlayer" then return findMultiColorInRegionFuzzy(0xc6c6b6, "10|0|0xb5b5b5,17|0|0xc4c4b3", 90, 566, 514, 712, 604, { orient = 2 })
     --确定进入
-    elseif id == "Enter" then return  findMultiColorInRegionFuzzy(0x4a4a3a, "20|0|0xc8b795,31|0|0xddddae,53|4|0x737370,62|12|0x5d5647", 90, 0, 0, 1280, 720, { orient = 1 })
+    elseif id == "Enter" then return findMultiColorInRegionFuzzy(0x504837, "42|-3|0x4c4b4a,52|8|0xdcdaad,54|12|0xdfcfae", 90, 548, 532, 744, 601, { orient = 2 })
+    --elseif id == "Enter" then return  findMultiColorInRegionFuzzy(0x4a4a3a, "20|0|0xc8b795,31|0|0xddddae,53|4|0x737370,62|12|0x5d5647", 90, 0, 0, 1280, 720, { orient = 1 })
     --角色按钮
     elseif id == "Btn_Player" then return findMultiColorInRegionFuzzy(0x7e560b, "-5|9|0xa26b5a,-4|17|0x513d2c,2|30|0xac7c69,2|39|0x211d1c,-18|39|0x121212", 90, 1176, 194, 1277, 279, { orient = 2 })
     --关闭地图
@@ -43,7 +48,8 @@ function SearchColorHSZ.search(id)
     elseif id == "ZiDong" then return findMultiColorInRegionFuzzy(0xf7e6b3, "3|1|0xecdba8,7|4|0xeddb99,0|19|0xbe9c58", 90, 576, 459, 889, 574, { orient = 2 })
     --妖兽
     elseif id == "YaoShou" then return findMultiColorInRegionFuzzy(0x03c0b5, "1|0|0x039e95,6|-3|0x026f69", 90, 0, 0, 1280, 720, { orient = 2 })
-
+    --小地图上的人
+    elseif id == "Player" then return findMultiColorInRegionFuzzy(0xffeb04, "", 90, 1086, 34, 1274, 168, { orient = 2 })
     end
     
     
