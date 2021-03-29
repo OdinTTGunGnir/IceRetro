@@ -4,9 +4,21 @@ SearchColor = require("SearchColor")
 init(1)
 
 UI.ShowUI()
-
+Map = UI.SelectMap();
 Global.Begin()
 
+
+
+
+
+-- local test =   UI.SelectMap()
+-- -- Debug.Log(UI.SelectMap()[1].key) 
+-- -- Debug.Log(UI.SelectMap()[2].key) 
+-- -- Debug.Log(UI.SelectMap()[3].key) 
+    
+-- for key, value in pairs(test) do 
+--     Debug.Log(key) 
+-- end
 
 -- local x ,y = SearchColor.search("YuanBao2")
        

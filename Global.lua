@@ -15,6 +15,7 @@ local Finish = false
 Global.Device = UI.GetDevice()
 local huichengflag = true
 
+targetNum = 1
 
 function Global.Begin()
    
@@ -27,15 +28,16 @@ function Global.Begin()
     --定义变量和计算比例
     local BTime,MTime,index
     BTime= 30
-    MTime= 30
+    MTime= 3
     if UI.BeiBao_TIME()=="" then
         BTime= 30
     end
     if UI.GuaJiShiJian()=="" then
-        MTime= 30
+        MTime= 3
     end
     index = 1/(MTime*60)
-    
+    MapIndex_Furture = 1
+    MapIndex_Current = 1
     
     mSleep(5000)
     -- -- 开始游戏配置
@@ -45,16 +47,17 @@ function Global.Begin()
     -- Debug.Log("游戏配置成功")
     -- 移动至
     ClickSuit.CloseBtn()
+    -- UI.SelectMap()
     
     ::MoveToMap::
     repeat
-        nLog("前往地图")
-        Finish = MoveTo.moveTo(UI.SelectMap())
+        Debug.Log("前往地图")
+        
+        Finish = MoveTo.moveTo(Map)
         --  Finish = MoveTo.moveTo("天空之城（地）")
     until( Finish )
     --Debug.Log("移动成功，移动至："+UI.SelectMap())
-    MapIndex_Furture = 1
-    MapIndex_Current = 1
+    
     mSleep(5000)
     ::Auto::
     --打开自动
@@ -67,14 +70,14 @@ function Global.Begin()
     while (true) do
         
         ClickSuit.CloseBtn()
-        nLog("循环")
+        -- Debug.Log("循环")
         local x ,y = SearchColor.search("Btn_Player")
         if x == -1 then
             goto BeginGame
         end
-        local x,y = FindFont.findFont(UI.SelectMap()[MapIndex_Current])
-        nLog(x)
-        nLog(UI.SelectMap()[MapIndex_Current])
+        local x,y = FindFont.findFont(Map[MapIndex_Current])
+        -- Debug.Log(x)
+        Debug.Log(Map[MapIndex_Current])
         if x == -1 then
             goto MoveToMap
         end
@@ -88,12 +91,15 @@ function Global.Begin()
         --是否切换地图
         if UI.GuaJiCheck()=="挂机" then 
             if UI.MapCount()>=2 then
+                nLog("MapIndex_Furture =   "..MapIndex_Furture)
                 MapIndex_Furture  = MapIndex_Furture + (index*BTime)
                 if (MapIndex_Furture - MapIndex_Current)>=1 then
                     MapIndex_Current = MapIndex_Furture
-                    if(MapIndex_Furture ==UI.MapCount()) then
+                    targetNum = MapIndex_Furture
+                    if(MapIndex_Furture >UI.MapCount()) then
                         MapIndex_Furture = 1
                         MapIndex_Current = 1
+                        targetNum = 1
                     end
                     goto MoveToMap
                 end

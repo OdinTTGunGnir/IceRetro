@@ -42,12 +42,46 @@ function UI.ShowUI()
     -- UICheck(1,"Check5,Check6,Check7","见人就杀,被打反击,每个地图挂机30分钟切换地图","0")
     
     UILabel(2,"---------------------基本地图---------------------",15,"center","34,139,34")
-    UICheck(2,"Check8,Check9,Check10,Check11","黑暗魔窟一层,黑暗魔窟二层,黑暗魔窟三层,黑暗魔窟四层","0",-1,0,"",1,2)
-    UICheck(2,"Check12,Check13,Check14,Check15,Check16,Check17,Check18,Check19,Check20","世外桃源,天之域,地之域,血龙巢穴1,血龙巢穴2,血龙巢穴3,血龙巢穴4,海外仙岛,广寒宫","0",-1,0,"",1,3)
+    UICheck(2,"Check8","黑暗魔窟一层","0",-1,1,"",1,1)
+    UICheck(2,"Check9","黑暗魔窟二层","0",-1,0,"",1,1)
+    UICheck(2,"Check10","黑暗魔窟三层","0",-1,1,"",1,1)
+    UICheck(2,"Check11","黑暗魔窟四层","0",-1,0,"",1,1)
+    
+    UICheck(2,"Check12","世外桃源","0",-1,1,"",1,1)
+    UICheck(2,"Check13","天之域","0",-1,1,"",1,1)
+    UICheck(2,"Check14","地之域","0",-1,0,"",1,1)
+    UICheck(2,"Check15","血龙巢穴1","0",-1,1,"",1,1)
+    UICheck(2,"Check16","血龙巢穴2","0",-1,1,"",1,1)
+    UICheck(2,"Check17","血龙巢穴3","0",-1,0,"",1,1)
+    UICheck(2,"Check18","血龙巢穴4","0",-1,1,"",1,1)
+    UICheck(2,"Check19","海外仙岛","0",-1,1,"",1,1)
+    UICheck(2,"Check20","广寒宫","0",-1,0,"",1,1)
+    
+    -- UICheck(2,"Check12,Check13,Check14,Check15,Check16,Check17,Check18,Check19,Check20","世外桃源,天之域,地之域,血龙巢穴1,血龙巢穴2,血龙巢穴3,血龙巢穴4,海外仙岛,广寒宫","0",-1,0,"",1,3)
     
     UILabel(3,"---------------------高阶地图---------------------",15,"center","34,139,34")
-    UICheck(3,"Check2_1,Check2_2,Check2_3,Check2_4,Check2_5,Check2_6,Check2_7,Check2_8,Check2_9,Check3_0,Check3_1,Check3_2,Check3_3,Check3_4,Check3_5,Check3_6,Check3_7,Check3_8,Check3_9,Check4_0","冰雪之城,新世界,旧世界,孤独1,孤独2,孤独3,孤独4,传奇经典之路,起源冰城,起源宫殿,火龙1,火龙2,火龙3,火龙4,火龙5,火龙6,火龙7,火龙8,黑暗之森,上古之地","0",-1,0,"",1,3)
+    UICheck(3,"Check2_1","冰雪之城","0",-1,1,"",1,1)
+    UICheck(3,"Check2_2","新世界","0",-1,1,"",1,1)
+    UICheck(3,"Check2_3","旧世界","0",-1,0,"",1,1)
+    UICheck(3,"Check2_4","孤独1","0",-1,1,"",1,1)
+    UICheck(3,"Check2_5","孤独2","0",-1,1,"",1,1)
+    UICheck(3,"Check2_6","孤独3","0",-1,0,"",1,1)
+    UICheck(3,"Check2_7","孤独4","0",-1,1,"",1,1)
+    UICheck(3,"Check2_8","传奇经典之路","0",-1,0,"",1,1)
+    UICheck(3,"Check2_9","起源冰城","0",-1,1,"",1,1)
+    UICheck(3,"Check3_0","起源宫殿","0",-1,1,"",1,1)
+    UICheck(3,"Check3_1","火龙1","0",-1,0,"",1,1)
+    UICheck(3,"Check3_2","火龙2","0",-1,1,"",1,1)
+    UICheck(3,"Check3_3","火龙3","0",-1,1,"",1,1)
+    UICheck(3,"Check3_4","火龙4","0",-1,0,"",1,1)
+    UICheck(3,"Check3_5","火龙5","0",-1,1,"",1,1)
+    UICheck(3,"Check3_6","火龙6","0",-1,1,"",1,1)
+    UICheck(3,"Check3_7","火龙7","0",-1,0,"",1,1)
+    UICheck(3,"Check3_8","火龙8","0",-1,1,"",1,1)
+    UICheck(3,"Check3_9","黑暗之森","0",-1,1,"",1,1)
+    UICheck(3,"Check4_0","上古之地","0",-1,0,"",1,1)
     
+    -- UICheck(3,"Check2_1,Check2_2,Check2_3,Check2_4,Check2_5,Check2_6,Check2_7,Check2_8,Check2_9,Check3_0,Check3_1,Check3_2,Check3_3,Check3_4,Check3_5,Check3_6,Check3_7,Check3_8,Check3_9,Check4_0","冰雪之城,新世界,旧世界,孤独1,孤独2,孤独3,孤独4,传奇经典之路,起源冰城,起源宫殿,火龙1,火龙2,火龙3,火龙4,火龙5,火龙6,火龙7,火龙8,黑暗之森,上古之地","0",-1,0,"",1,3)
     UILabel(4,"---------------------喊话设置---------------------",15,"center","34,139,34")
     
     -- UILabel(4,"喊话间隔",18,"left","38,38,38",200,1)
@@ -78,106 +112,215 @@ function UI.ShowUI()
 end
 Array_Map = {} 
 
+local function v_include(tab, value)
+    for k,v in pairs(tab) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
 function UI.SelectMap()
     
     if Check8 =="黑暗魔窟一层" then
-        table.insert(Array_Map,"黑暗魔窟一层")
+        if v_include(Array_Map,"黑暗魔窟一层") then
+        else
+            table.insert(Array_Map,"黑暗魔窟一层")
+        end
     end    
     if Check9 =="黑暗魔窟二层" then
-        table.insert(Array_Map,"黑暗魔窟二层")
+        if v_include(Array_Map,"黑暗魔窟二层") then
+        else
+            table.insert(Array_Map,"黑暗魔窟二层")
+        end
     end    
     if Check10 =="黑暗魔窟三层" then
-        table.insert(Array_Map,"黑暗魔窟三层")
+        if v_include(Array_Map,"黑暗魔窟三层") then
+        else
+            table.insert(Array_Map,"黑暗魔窟三层")
+        end
     end    
     if Check11 =="黑暗魔窟四层" then
-        table.insert(Array_Map,"黑暗魔窟四层")
+        if v_include(Array_Map,"黑暗魔窟四层") then
+        else
+            table.insert(Array_Map,"黑暗魔窟四层")
+        end
     end    
     if Check12 =="世外桃源" then
-        table.insert(Array_Map,"世外桃源")
+        if v_include(Array_Map,"世外桃源") then
+        else
+            table.insert(Array_Map,"世外桃源")
+        end
     end    
     if Check13 =="天之域" then
-        table.insert(Array_Map,"天之域")
+        if v_include(Array_Map,"天之域") then
+        else
+            table.insert(Array_Map,"天之域")
+        end
     end    
     if Check14 =="地之域" then
-        table.insert(Array_Map,"地之域")
+        if v_include(Array_Map,"地之域") then
+        else
+            table.insert(Array_Map,"地之域")
+        end
     end    
     if Check15 =="血龙巢穴1" then
-        table.insert(Array_Map,"血龙巢穴1")
+        if v_include(Array_Map,"血龙巢穴1") then
+        else
+            table.insert(Array_Map,"血龙巢穴1")
+        end
     end    
     if Check16 =="血龙巢穴2" then
-        table.insert(Array_Map,"血龙巢穴2")
+        if v_include(Array_Map,"血龙巢穴2") then
+        else
+            table.insert(Array_Map,"血龙巢穴2")
+        end
     end    
     if Check17 =="血龙巢穴3" then
-        table.insert(Array_Map,"血龙巢穴3")
+        if v_include(Array_Map,"血龙巢穴3") then
+        else
+            table.insert(Array_Map,"血龙巢穴3")
+        end
     end    
     if Check18 =="血龙巢穴4" then
-        table.insert(Array_Map,"血龙巢穴4")
+        if v_include(Array_Map,"血龙巢穴4") then
+        else
+            table.insert(Array_Map,"血龙巢穴4")
+        end
     end    
     if Check19 =="海外仙岛" then
-        table.insert(Array_Map,"海外仙岛")
+        if v_include(Array_Map,"海外仙岛") then
+        else
+            table.insert(Array_Map,"海外仙岛")
+        end
     end    
     if Check20 =="广寒宫" then
-        table.insert(Array_Map,"广寒宫")
+        if v_include(Array_Map,"广寒宫") then
+        else
+            table.insert(Array_Map,"广寒宫")
+        end
     end    
     if Check2_1 =="冰雪之城" then
-        table.insert(Array_Map,"冰雪之城")
+        if v_include(Array_Map,"冰雪之城") then
+        else
+            table.insert(Array_Map,"冰雪之城")
+        end
     end    
     if Check2_2 =="新世界" then
-        table.insert(Array_Map,"新世界")
+        if v_include(Array_Map,"新世界") then
+        else
+            table.insert(Array_Map,"新世界")
+        end
     end    
     if Check2_3 =="旧世界" then
-        table.insert(Array_Map,"旧世界")
+        if v_include(Array_Map,"旧世界") then
+        else
+            table.insert(Array_Map,"旧世界")
+        end
     end    
     if Check2_4 =="孤独1" then
-        table.insert(Array_Map,"孤独1")
+        if v_include(Array_Map,"孤独1") then
+        else
+            table.insert(Array_Map,"孤独1")
+        end
     end    
     if Check2_5 =="孤独2" then
-        table.insert(Array_Map,"孤独2")
+        if v_include(Array_Map,"孤独2") then
+        else
+            table.insert(Array_Map,"孤独2")
+        end
     end    
     if Check2_6 =="孤独3" then
-        table.insert(Array_Map,"孤独3")
+        if v_include(Array_Map,"孤独3") then
+        else
+            table.insert(Array_Map,"孤独3")
+        end
     end    
     if Check2_7 =="孤独4" then
-        table.insert(Array_Map,"孤独4")
+        if v_include(Array_Map,"孤独4") then
+        else
+            table.insert(Array_Map,"孤独4")
+        end
     end    
     if Check2_8 =="传奇经典之路" then
-        table.insert(Array_Map,"传奇经典之路")
+        if v_include(Array_Map,"传奇经典之路") then
+        else
+            table.insert(Array_Map,"传奇经典之路")
+        end
     end    
     if Check2_9 =="起源冰城" then
-        table.insert(Array_Map,"起源冰城")
+        if v_include(Array_Map,"起源冰城") then
+        else
+            table.insert(Array_Map,"起源冰城")
+        end
     end    
     if Check3_0 =="起源宫殿" then
-        table.insert(Array_Map,"起源宫殿")
+        if v_include(Array_Map,"起源宫殿") then
+        else
+            table.insert(Array_Map,"起源宫殿")
+        end
     end    
     if Check3_1 =="火龙1" then
-        table.insert(Array_Map,"火龙1")
+        if v_include(Array_Map,"火龙1") then
+        else
+            table.insert(Array_Map,"火龙1")
+        end
     end    
     if Check3_2 =="火龙2" then
-        table.insert(Array_Map,"火龙2")
+        if v_include(Array_Map,"火龙2") then
+        else
+            table.insert(Array_Map,"火龙2")
+        end
     end    
     if Check3_3 =="火龙3" then
-        table.insert(Array_Map,"火龙3")
+        if v_include(Array_Map,"火龙3") then
+        else
+            table.insert(Array_Map,"火龙3")
+        end
     end    
     if Check3_4 =="火龙4" then
-        table.insert(Array_Map,"火龙4")
+        if v_include(Array_Map,"火龙4") then
+        else
+            table.insert(Array_Map,"火龙4")
+        end
     end    
     if Check3_5 =="火龙5" then
-        table.insert(Array_Map,"火龙5")
+        if v_include(Array_Map,"火龙5") then
+        else
+            table.insert(Array_Map,"火龙5")
+        end
     end    
     if Check3_6 =="火龙6" then
-        table.insert(Array_Map,"火龙6")
+        if v_include(Array_Map,"火龙6") then
+        else
+            table.insert(Array_Map,"火龙6")
+        end
     end    
     if Check3_7 =="火龙7" then
-        table.insert(Array_Map,"火龙7")
+        if v_include(Array_Map,"火龙7") then
+        else
+            table.insert(Array_Map,"火龙7")
+        end
+
     end    
     if Check3_8 =="火龙8" then
-        table.insert(Array_Map,"火龙8")
+        if v_include(Array_Map,"火龙8") then
+        else
+            table.insert(Array_Map,"火龙8")
+        end
     end    
     if Check3_9 =="黑暗之森" then
-        table.insert(Array_Map,"黑暗之森")
+        if v_include(Array_Map,"黑暗之森") then
+        else
+            table.insert(Array_Map,"黑暗之森")
+        end
     end    
     if Check4_0 =="上古之地" then
-        table.insert(Array_Map,"上古之地")
+        if v_include(Array_Map,"上古之地") then
+        else
+            table.insert(Array_Map,"上古之地")
+        end
     end
     return Array_Map
     -- for var=1,#Array_Map do
@@ -200,17 +343,18 @@ function UI.GuaJiShiJian()
     return Tex_GuaJiShijian
 end
 function UI.MapCount()
+    
     return #Array_Map
 end
 function UI.GuaJiCheck()
-   return Select_GuaJi; 
+    return Select_GuaJi; 
 end    
 function UI.JinYanCheck()
     local IsJy = false
     if CheckJY =="经验是否使用" then
         IsJy = true
     end
-   return IsJy; 
+    return IsJy; 
 end    
 
 function UI.BuyHuichengCheck()
@@ -218,7 +362,7 @@ function UI.BuyHuichengCheck()
     if BuyHuichengCheck =="补充回城石" then
         BuyHuicheng = true
     end
-   return BuyHuicheng; 
+    return BuyHuicheng; 
 end    
 return UI
 

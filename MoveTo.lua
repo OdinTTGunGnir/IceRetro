@@ -383,7 +383,6 @@ local function GoToTianDiZhiYu(index)
         local x,y = FindFont.findFont("313,339")
     until( x ~= -1 )
     mSleep(5000)
-    
     Tools.click(840,458) -- 点击天地之域地图
     if index==1 then
         Tools.click(433,122) -- 进入天地之域-天地图
@@ -603,7 +602,8 @@ function MoveTo.moveTo(name)
     
     
     
-    local a = UI.SelectMap()[MapIndex_Current]
+    local a = name[targetNum]
+
     if a=="血龙巢穴1" then a = "血龙回廊"
     elseif a=="血龙巢穴2" then a = "血龙大厅"
     elseif a=="血龙巢穴3" then a = "血龙阁"
@@ -613,7 +613,28 @@ function MoveTo.moveTo(name)
     -- if x~= -1 then 
     --     return true    
     -- end
-    local MapName = name[MapIndex_Current]
+    
+    local MapName = a
+    --MapIndex_Current：当前地图索引
+    --Map: 地图table
+    
+    -- Debug.Log("targetNum =  "..targetNum)--打印当前地图索引
+    -- Debug.Log("UI.SelectMap()[2] =  "..Map[2])--打印地图table中的第二个元素的value值
+    -- targetNum = math.floor(targetNum)
+    -- if Map[targetNum]==nil then
+    --     Debug.Log("空值   "..targetNum)
+    -- else
+        
+    -- end
+    -- if MapIndex_Current==nil then
+    --     Debug.Log("MapIndex_Current空值")
+    -- else
+        
+    -- end
+    
+    -- -- Debug.Log("MapIndex_Current数据类型 =  "..type(MapIndex_Current))--打印MapIndex_Current数据类型
+    -- Debug.Log("UI.SelectMap()[MapIndex_Current] =  "..Map[targetNum])--打印地图table中的当前地图索引的value值
+    
     if MapName == "孤独之地1" then
         --前往冰雪之城
         GoToBingxue()

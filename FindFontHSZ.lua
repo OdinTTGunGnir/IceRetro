@@ -58,7 +58,7 @@ function FindFontHSZ.findFont(id)
     --广寒宫    
     elseif id == "广寒宫" then return  tsFindText(index, "广寒宫",1092, 3, 1274, 30, "CDC4B9 , 1A1918", 90)
     end 
-    Debug.log("找字ID未定义")
+    --Debug.log("找字ID未定义")
     return -1,-1
 end
 
