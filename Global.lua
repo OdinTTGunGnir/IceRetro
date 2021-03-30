@@ -16,6 +16,8 @@ Global.Device = UI.GetDevice()
 local huichengflag = true
 
 targetNum = 1
+timeOld = 0
+timeNow = 0
 
 function Global.Begin()
    
@@ -63,7 +65,7 @@ function Global.Begin()
     --打开自动
     Tools.click(1160,314)
     
-    
+    timeOld = getNetTime()
     mSleep(10000)
     
     --循环清理背包
@@ -91,21 +93,21 @@ function Global.Begin()
         --是否切换地图
         if UI.GuaJiCheck()=="挂机" then 
             if UI.MapCount()>=2 then
-                nLog("MapIndex_Furture =   "..MapIndex_Furture)
-                MapIndex_Furture  = MapIndex_Furture + (index*BTime)
-                if (MapIndex_Furture - MapIndex_Current)>=1 then
-                    MapIndex_Current = MapIndex_Furture
-                    targetNum = MapIndex_Furture
-                    if(MapIndex_Furture >UI.MapCount()) then
+                timeNow = getNetTime()
+                -- nLog("timenow  :  "..timeNow)
+                -- nLog("timeold  :  "..timeOld)
+                -- nLog("timeNow-timeOld  :  "..timeNow-timeOld)
+                if (timeNow-timeOld)/60 >= MTime then
+                    MapIndex_Current  = MapIndex_Current +1
+                    targetNum = MapIndex_Current
+                    timeOld = timeNow
+                    if MapIndex_Current >UI.MapCount() then
                         MapIndex_Furture = 1
                         MapIndex_Current = 1
                         targetNum = 1
-                    end
+                    end    
                     goto MoveToMap
-                end
-                if MapIndex_Furture >UI.MapCount()+1 then
-            
-                end
+                end    
             end
         end
         --mSleep(UI.BeiBao_TIME() * 1000)
